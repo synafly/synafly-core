@@ -17,8 +17,10 @@ def render(name,title,subtitle,nodes,edges,footer):
         label=n['title']+' | '+' | '.join(n['lines']);mmd.append(f'  {n["id"]}["{label}"]')
         if n.get('future'):mmd.append(f'  style {n["id"]} stroke-dasharray:5 5')
     for e in edges:
-        a,b,label,points=e;svg.append(f'<polyline class="edge" points="{points}"/>')
-        mmd.append(f'  {a} -->|"{label}"| {b}')
+        a,b,label,points=e[:4];future=len(e)>4 and e[4]
+        dash=' stroke-dasharray="8 6"' if future else ''
+        svg.append(f'<polyline class="edge" points="{points}"{dash}/>')
+        mmd.append(f'  {a} -->|"{("Proposed: " if future else "")+label}"| {b}')
     for i,line in enumerate(footer):svg.append(f'<text class="note" x="48" y="{690+i*26}">{escape(line)}</text>')
     svg.append('</svg>');OUT.mkdir(parents=True,exist_ok=True);(OUT/(name+'.svg')).write_text('\n'.join(svg)+'\n');(OUT/(name+'.mmd')).write_text('\n'.join(mmd)+'\n')
 
@@ -40,14 +42,22 @@ render('recovery','Keeper failure → verified recovery','Reference experiment: 
  {'id':'resume','title':'6 · Continue','lines':['Atomic fast-forward import','Tick 72 matches uninterrupted','execution byte for byte'],'box':[48,450,320,145]}
 ],[('a','b','replicate','328,235 425,235'),('b','stopA','after replication','770,235 880,235'),('stopA','c','fresh process','1095,300 1095,445'),('b','c','surviving peer supplies bytes','600,300 600,373 1000,373 1000,445'),('c','replay','verify history','885,522 775,522'),('replay','resume','valid fast-forward','430,522 373,522')],['The demonstrated result is recovery after failure. Automatic WAN self-healing is not claimed.','A retained graph, model and at least one valid copy are required; a hash alone cannot restore missing data.'])
 
-render('bssr-gates','BSSR · Proposed edge layer and evidence gates','Research blueprint. This RPC path is not implemented by the current keeper release.',[
- {'id':'client','title':'Read-only client','lines':['Bounded method surface','Explicit block context'],'box':[48,170,250,130],'future':True},
- {'id':'cache','title':'Context + coalescing','lines':['Exact request identity','Freshness / reorg rules'],'box':[365,170,300,130],'future':True},
- {'id':'route','title':'Sparse edge routing','lines':['Peer selection + fallback','Matched nonbiological baseline'],'box':[730,170,330,130],'future':True},
- {'id':'origin','title':'BSC origin RPC','lines':['Unchanged PoSA / EVM','Measured upstream work'],'box':[1125,170,267,130],'future':True},
+render('bssr-gates','BSSR · Implementation and evidence gates','Read edge implemented; biological peer routing remains a separate research question.',[
+ {'id':'client','title':'Read-only client','lines':['Four state-query methods','Explicit block context'],'box':[48,170,250,130]},
+ {'id':'cache','title':'Pinned-state cache','lines':['Bounded TTL / LRU','Single-flight coalescing'],'box':[365,170,300,130]},
+ {'id':'route','title':'Biological peer layer','lines':['Lookup simulation available','No live routing integration'],'box':[730,170,330,130],'future':True},
+ {'id':'origin','title':'BSC origin RPC','lines':['Read compatibility observed','Trusted external provider'],'box':[1125,170,267,130]},
  {'id':'g1','title':'Gate 1 · Local pass','lines':['Deterministic continuity','Peer recovery evidence'],'box':[48,465,300,140]},
  {'id':'g2','title':'Gate 2 · Local pass','lines':['Witness-quorum registry','Local EVM receipts'],'box':[398,465,300,140]},
- {'id':'g3','title':'Gate 3 · Pending','lines':['Role-correct RPC prototype','Adversarial correctness tests'],'box':[748,465,300,140],'future':True},
+ {'id':'g3','title':'Gate 3 · Partial','lines':['Read edge tested','Peer integration remains open'],'box':[748,465,300,140],'future':True},
  {'id':'g4','title':'Gate 4 · Pending','lines':['Independent WAN tests','Full cost / resource accounting'],'box':[1098,465,294,140],'future':True}
-],[('client','cache','proposed request path','298,235 360,235'),('cache','route','proposed peer lookup','665,235 725,235'),('route','origin','cache miss / fallback','1060,235 1120,235'),('g1','g2','prerequisite mechanisms','348,535 393,535'),('g2','g3','next evidence gate','698,535 743,535'),('g3','g4','before performance claims','1048,535 1093,535')],['Fewer origin requests do not imply the same percentage reduction in total node costs.','Economic inputs are scenarios until supported by measured workloads and complete accounting.'])
-print('Rendered three SVG diagrams and their Mermaid sources.')
+],[('client','cache','implemented read path','298,235 360,235'),('cache','route','peer lookup','665,235 725,235',True),('route','origin','peer fallback','1060,235 1120,235',True),('cache','origin','actual miss / bypass path','515,300 515,365 1255,365 1255,305'),('g1','g2','prerequisite mechanisms','348,535 393,535'),('g2','g3','next evidence gate','698,535 743,535'),('g3','g4','before WAN claims','1048,535 1093,535',True)],['The solid origin path is implemented. Dashed peer paths are proposed, not deployed.','Fewer requests do not imply equal node-cost savings. No biological routing advantage is established.'])
+
+render('rpc-edge','Read-only RPC edge · v0.2','Explicit state identity, bounded cache and one trusted upstream.',[
+ {'id':'client','title':'Programmatic client','lines':['Four read methods','Caller IDs preserved','Loopback API · batch up to 8'],'box':[48,195,300,160]},
+ {'id':'gate','title':'State-context gate','lines':['Chain ID + genesis at startup','Method + address / slot','Typed block selector'],'box':[410,195,345,160]},
+ {'id':'cache','title':'Eligible immutable state','lines':['blockHash; canonicality false','LRU / TTL + single-flight','Hit returns locally; miss goes upstream'],'box':[825,150,540,160]},
+ {'id':'bypass','title':'Uncached state','lines':['latest / pending / block numbers','requireCanonical: true','No cached latest-state substitution'],'box':[825,370,540,160]},
+ {'id':'origin','title':'Configured origin · no consensus proof','lines':['TLS verification · validated responses · errors never cached','Post-connect response deadline; DNS remains a platform boundary'],'box':[410,550,955,115]}
+],[('client','gate','validate','348,275 405,275'),('gate','cache','eligible key','755,250 790,250 790,230 820,230'),('gate','bypass','dynamic or canonical-required','755,325 790,325 790,445 820,445'),('cache','origin','miss only','1365,230 1392,230 1392,610 1370,610'),('bypass','origin','forward','1100,530 1100,545')],['The biological graph is not in this HTTP path. Graph lookup comparisons are separate experiments.','No transaction submission, wallet keys, public serving or full-node replacement.'])
+print('Rendered four SVG diagrams and their Mermaid sources.')

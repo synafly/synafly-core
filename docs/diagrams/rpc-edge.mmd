@@ -1,0 +1,11 @@
+flowchart LR
+  client["Programmatic client | Four read methods | Caller IDs preserved | Loopback API · batch up to 8"]
+  gate["State-context gate | Chain ID + genesis at startup | Method + address / slot | Typed block selector"]
+  cache["Eligible immutable state | blockHash; canonicality false | LRU / TTL + single-flight | Hit returns locally; miss goes upstream"]
+  bypass["Uncached state | latest / pending / block numbers | requireCanonical: true | No cached latest-state substitution"]
+  origin["Configured origin · no consensus proof | TLS verification · validated responses · errors never cached | Post-connect response deadline; DNS remains a platform boundary"]
+  client -->|"validate"| gate
+  gate -->|"eligible key"| cache
+  gate -->|"dynamic or canonical-required"| bypass
+  cache -->|"miss only"| origin
+  bypass -->|"forward"| origin

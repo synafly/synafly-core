@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Build a reviewed source ZIP; no commits, network calls or GitHub publication."""
-import hashlib,json,re,zipfile
+import hashlib,json,re,tomllib,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DIRECTORIES={'synafly_lab','tests','scripts','contracts','test','docs','data','results','abi','deployments','.github'}
@@ -28,7 +28,9 @@ def main():
     if issues:raise SystemExit(json.dumps(issues))
     source={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths if p.relative_to(ROOT).parts[0]!='results'}
     (ROOT/'results/source-manifest.json').write_text(json.dumps({'source_sha256':source,'scope':'Source/data/docs; results excluded from this source fingerprint','screening':'Limited literal credential/path checks; not a security audit'},indent=2)+'\n')
-    paths=selected();out=ROOT/'dist';out.mkdir(exist_ok=True);target=out/'synafly-lab-v0.1.0.zip'
+    version=tomllib.loads((ROOT/'pyproject.toml').read_text())['project']['version']
+    if not re.fullmatch(r'\d+\.\d+\.\d+',version):raise ValueError('Release version')
+    paths=selected();out=ROOT/'dist';out.mkdir(exist_ok=True);target=out/('synafly-lab-v'+version+'.zip')
     with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as archive:
         for p in paths:
             entry=zipfile.ZipInfo('synafly-lab/'+str(p.relative_to(ROOT)),date_time=(1980,1,1,0,0,0))

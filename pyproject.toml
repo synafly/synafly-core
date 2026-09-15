@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "synafly-lab"
-version = "0.1.0"
-description = "Reproducible connectome-state continuity and peer-recovery research"
+version = "0.2.0"
+description = "Read-only RPC edge, controlled topology experiments and verifiable state continuity"
 requires-python = ">=3.12"
 license = "MIT"
 

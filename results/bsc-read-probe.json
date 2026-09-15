@@ -1,0 +1,124 @@
+{
+  "experiment": "public-bsc-fixed-block-read-compatibility",
+  "status": "passed",
+  "upstream": "https://bsc-dataseed.bnbchain.org",
+  "chain_id": 56,
+  "genesis_hash": "0x0d21840abff46b96c84b2ac9e10e4f5cdaeb5693cb665db62a2f3b02d2d57b5b",
+  "queried_block": {
+    "number": "0x74661ae",
+    "hash": "0x7911c0e3e4d059bec3c241e651e19f309f8e571ee4aaa3e5fa84abebe9871b81",
+    "require_canonical": false
+  },
+  "address": "0x0000000000000000000000000000000000000000",
+  "repeat_rounds": 4,
+  "query_profile": "Four read methods, one neutral address, one explicit block hash.",
+  "schedule": "Block captured after identity bootstrap; four paired method workers per round; no retries. Not a latency benchmark.",
+  "shared_capture_rpc_calls": 3,
+  "total_public_rpc_calls": 27,
+  "blockchain_transactions_sent": 0,
+  "public_registry_deployed": false,
+  "results_match": true,
+  "results": [
+    {
+      "mode": "pass-through",
+      "client_reads": 16,
+      "values": [
+        {
+          "method": "eth_getBalance",
+          "result": "0x15041d422f4e6d775d98"
+        },
+        {
+          "method": "eth_getCode",
+          "result": "0x"
+        },
+        {
+          "method": "eth_getTransactionCount",
+          "result": "0x0"
+        },
+        {
+          "method": "eth_getStorageAt",
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "outcomes_sha256": "e475a15c03d0b5d3476ad7501c3ba0f1f31e51e23f222f6b18a2860c05420b12",
+      "edge_metrics": {
+        "read_requests": 16,
+        "pinned_requests": 16,
+        "bypassed_requests": 0,
+        "cache_hits": 0,
+        "cache_misses": 16,
+        "coalesced_waiters": 0,
+        "origin_reads": 16,
+        "origin_errors": 0,
+        "evictions": 0,
+        "capacity_rejections": 0,
+        "cache_entries": 0,
+        "cache_value_bytes": 0,
+        "inflight_keys": 0
+      },
+      "origin_metrics": {
+        "rpc_calls": 18,
+        "metadata_calls": 2,
+        "state_reads": 16,
+        "request_json_bytes": 3627,
+        "response_json_bytes": 3466
+      }
+    },
+    {
+      "mode": "pinned-cache",
+      "client_reads": 16,
+      "values": [
+        {
+          "method": "eth_getBalance",
+          "result": "0x15041d422f4e6d775d98"
+        },
+        {
+          "method": "eth_getCode",
+          "result": "0x"
+        },
+        {
+          "method": "eth_getTransactionCount",
+          "result": "0x0"
+        },
+        {
+          "method": "eth_getStorageAt",
+          "result": "0x0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "outcomes_sha256": "e475a15c03d0b5d3476ad7501c3ba0f1f31e51e23f222f6b18a2860c05420b12",
+      "edge_metrics": {
+        "read_requests": 16,
+        "pinned_requests": 16,
+        "bypassed_requests": 0,
+        "cache_hits": 12,
+        "cache_misses": 4,
+        "coalesced_waiters": 0,
+        "origin_reads": 4,
+        "origin_errors": 0,
+        "evictions": 0,
+        "capacity_rejections": 0,
+        "cache_entries": 4,
+        "cache_value_bytes": 93,
+        "inflight_keys": 0
+      },
+      "origin_metrics": {
+        "rpc_calls": 6,
+        "metadata_calls": 2,
+        "state_reads": 4,
+        "request_json_bytes": 1008,
+        "response_json_bytes": 2746
+      }
+    }
+  ],
+  "limits": [
+    "One trusted public provider and controlled repeated reads; not real user traffic or an independent consensus proof.",
+    "Historical state may be pruned later; rerunning selects a new block and can produce different values.",
+    "This is a read-only compatibility observation, not a WAN-scale benchmark or cost-saving estimate.",
+    "The biological graph does not participate in this cache probe."
+  ],
+  "implementation_sha256": {
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171",
+    "scripts/probe_bsc_rpc.py": "a7d5feecb8665749c9b82cbaab25ec0396169ca92fe4391f7e7c006c75e4b502"
+  }
+}

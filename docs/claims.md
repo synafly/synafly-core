@@ -14,15 +14,22 @@
 | On-chain hashes guarantee perpetual recovery | False without retention assumptions | Keepers must preserve bytes; hashes alone cannot restore unavailable data |
 | Full fly brain or consciousness has been uploaded | Not implemented or claimed | Small positive-weight toy model; no fitted physiology, learning or embodied control |
 | BSC node roles can be offloaded efficiently | Hypothesis | docs/bsc-feasibility.md defines roles, costs, equivalence and falsification conditions |
+| A bounded read-only RPC edge is implemented | Implemented and locally tested | synafly_lab/edge_server.py; four methods; pinned noncanonical-required cache; dynamic/canonical-required bypass |
+| Cache/coalescing reduces origin calls in the fixture | Measured for the stated synthetic workload | results/edge-http.json: identical outcomes; 40/25/33/18 origin calls including bootstrap; not biological or economic savings |
+| Public BSC read compatibility was observed | Bounded read-only observation | results/bsc-read-probe.json: one provider, one block, 27 calls, no transactions; provider failures also recorded |
+| Biological routing is integrated into the RPC edge | Not implemented | Separate graph simulation; gateway uses ordinary caching/coalescing only |
+| The observed graph beats conventional lookup | Not established | results/routing-benchmark.json preserves fewer hits versus all eight rewired controls in the zero-failure fixture; contact-cost trade-offs reported |
 | BSC validators have been replaced / $20M saved | Not implemented or demonstrated | No full-node, PoSA or fleet-cost benchmark |
 | The entire live website is open source | Not claimed | This is an independent partial research release |
 
 Appropriate release wording after publication:
 
-> We have open-sourced a research prototype for verifiable model-state continuity:
-> connectome-derived dynamics, peer checkpoint recovery and an EVM commitment registry.
-> Current evidence is local. Public BSC anchors and independently operated keepers
-> are subsequent milestones. Additional components will be released as they mature.
+> SynaFly's research release includes verifiable state continuity, a bounded
+> read-only RPC edge and controlled topology comparisons. Offline experiments are
+> reproducible; a separate public BSC read probe records compatibility, not consensus
+> proof or deployment. Biological peer integration and independently operated WAN
+> keepers remain subsequent milestones. Additional components will be released as
+> they meet their own evidence gates.
 
 Do not replace these distinctions with an unqualified "immortal on BSC is already
 live" statement. Hypotheses may be published before validation, but must remain

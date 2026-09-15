@@ -13,7 +13,7 @@ There is no token, payout, buyback or key-management functionality.
 - Full data availability is an assumption: hashes and on-chain events cannot
   reconstruct missing checkpoints or graphs. Preserve multiple copies.
 - The immutable registry committee is permissioned. A 2-of-3 committee tolerates
-  one unavailable witness, not two colluding witnesses. Validators can falsely
+  one unavailable witness, not two colluding witnesses. Witnesses can falsely
   attest scientific correctness; the contract checks signatures, not biology.
 - Chain ID alone does not identify the real public BSC network. Local Anvil tests
   are labeled local. Public receipt checks trust the configured RPC and do not
@@ -21,8 +21,31 @@ There is no token, payout, buyback or key-management functionality.
 - Python source/model upgrades can change semantics. Fork a new model/run version
   rather than silently changing the meaning of already committed state.
 - Loopback demonstrations share a host and operator. Independent deployment,
-  internet DoS tests, Byzantine consensus, witness rotation and archival economics
+  Internet-scale DoS tests, Byzantine consensus, witness rotation and archival economics
   remain unimplemented.
+
+## RPC edge boundaries (v0.2)
+
+- Only four read methods are supported. There is no `eth_call`, transaction
+  submission, key management, tracing or user-selected upstream URL.
+- The daemon binds only to loopback and rejects browser Origin headers and
+  non-loopback Host values. Do not expose it through a public tunnel or reverse
+  proxy and assume that it has authentication, quotas or Internet abuse protection.
+- Chain ID plus genesis pins a configured network namespace at startup. It does
+  not prove RPC honesty or consensus. No trie-proof or light-client verification
+  is implemented; a dishonest upstream can return plausible but incorrect values.
+- Only explicit noncanonical-required block-hash reads may be cached/coalesced.
+  Canonical-required and dynamic selectors always go upstream. Cached historical
+  bytes may outlive origin pruning until expiry; origin error availability is not
+  preserved in that case. No automatic chain-head tracking is claimed.
+- Cache entries/bytes, origin concurrency, handlers, bodies and JSON depth are
+  bounded. Socket deadlines interrupt trickling upstream headers/bodies after
+  connect; platform DNS resolution is not an absolute-deadline guarantee.
+- Redirects are rejected, TLS verification stays enabled and unsupported configured
+  remote proxy routes fail explicitly. Aggregate metrics omit request addresses,
+  bodies and keys. Partial failed transport bytes are not a complete wire-cost metric.
+- The graph lookup benchmark is a separate simulation over trusted logical cache
+  replicas, not an authenticated or Byzantine-tolerant peer-cache protocol.
 
 Before external publication, review the exact files and remove all runtime stores,
 credentials and local logs. Follow the release checklist; do not treat CI green as

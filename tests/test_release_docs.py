@@ -20,7 +20,7 @@ class ReleaseTests(unittest.TestCase):
         for p in Path('docs/diagrams').glob('*.svg'):
             text=p.read_text();ET.fromstring(text)
             for forbidden in ['<script','<foreignObject','href=','/Users/']:self.assertNotIn(forbidden,text)
-        self.assertEqual(len(list(Path('docs/diagrams').glob('*.svg'))),3)
+        self.assertEqual(len(list(Path('docs/diagrams').glob('*.svg'))),4)
     def test_example_is_a_labeled_scenario(self):
         result=calculate(json.loads(Path('data/cost-scenario-example.json').read_text()))
         self.assertEqual(result['net_annual'],'40000.00');self.assertEqual(result['kind'],'illustrative_scenario_not_measured')

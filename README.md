@@ -2,19 +2,23 @@
 
 **Verifiable digital continuity. Toward bio-sparse edge infrastructure for BNB Chain.**
 
-**Research release v0.1** · **Python core: MIT** · **MaleCNS sample: CC BY 4.0** · **EVM registry: local tests passed**
+**Research release v0.2** · **Python core: MIT** · **MaleCNS sample: CC BY 4.0** · **EVM registry: local tests passed**
 
 SynaFly explores two connected questions: can a digital model's state outlive its
 original host, and can connectome-inspired sparse execution inform useful edge
-infrastructure? This first progressive release provides an executable foundation:
+infrastructure? The state-continuity foundation provides:
 real connection weights, deterministic state evolution, replay-verified checkpoint
 history, peer recovery and a BSC-compatible witness-quorum registry.
 
-The ambition is broader than this release. **BSSR (Bio-Sparse Synaptic Relay)** is
-our proposed outer edge layer for role-specific BSC offloading. Its RPC caching,
-routing and cost-reduction hypotheses are specified in the
-[feasibility blueprint](docs/bsc-feasibility.md); they are not presented as an
-implemented RPC relay or a measured ecosystem saving.
+**v0.2 adds runnable infrastructure and a controlled comparison:** a bounded
+read-only RPC edge, a real HTTP/process ablation, a public BSC read-compatibility
+probe, and graph lookup experiments against matched controls.
+
+**BSSR (Bio-Sparse Synaptic Relay)** remains the broader research program.
+The RPC cache is implemented; biological peer routing is a separate simulation,
+not wired into the gateway. The measured request reduction comes from ordinary
+caching/coalescing, **not a demonstrated biological advantage**.
+[Results and limitations](docs/release-v0.2.md) · [Architecture decision](docs/edge-design.md).
 
 - **Website / separate browser experience:** [synafly.fyi](https://synafly.fyi/)
 - **Scope:** a partial release of research components, not a claim that the whole live product is open source.
@@ -77,6 +81,61 @@ harness. It is not yet an unattended failure detector or autonomous WAN repair
 system. All demonstrated nodes share one host/operator; independent operation is
 a subsequent milestone.
 
+## Read-only edge: runnable v0.2 module
+
+![Read-only RPC edge policy](docs/diagrams/rpc-edge.svg)
+
+The daemon supports four state queries: `eth_getBalance`,
+`eth_getTransactionCount`, `eth_getCode` and `eth_getStorageAt`. It verifies an
+operator-pinned chain ID and genesis hash at startup and binds cache keys to that
+network, method, parameters and state selector.
+
+Only explicit `blockHash` reads with `requireCanonical: false` (or omitted) may
+use the bounded TTL/LRU cache and single-flight coalescing. `latest`, `pending`,
+block numbers and canonical-required requests always go upstream. This avoids
+serving a cached orphan as canonical state; it is **not** a latest-state cache or
+a canonical-chain tracker. Errors and malformed responses are never cached.
+
+```sh
+python3 -m synafly_lab.edge_server --upstream https://bsc-dataseed.bnbchain.org
+```
+
+This starts a **loopback-only** API at `127.0.0.1:8831`: `POST /rpc`,
+`GET /health`, `GET /metrics`. It is for programmatic experiments, not a public
+browser endpoint. No keys, signatures, transaction submission or remote deployment
+are involved. [RPC profile and resource bounds](docs/rpc-edge.md).
+
+### What the experiments establish
+
+For the same **38-state-query synthetic HTTP workload**, every mode returned identical
+expected results. Origin calls, **including two startup identity checks**, were:
+
+| Configuration | Origin RPC calls |
+|---|---:|
+| Pass-through | 40 |
+| Cache only | 25 |
+| Coalescing only | 33 |
+| Cache + coalescing | 18 |
+
+[Raw HTTP evidence](results/edge-http.json). Local health/metrics GETs are excluded
+from the state-query count and do not call the origin. These are counts for a stated
+workload, not measured node-cost savings or biological performance gains.
+
+The [public BSC probe](results/bsc-read-probe.json) compared 16 controlled reads
+against a fixed block: pass-through issued 16 state reads; caching issued 4, with
+matching values. All 27 public RPC calls, including bootstrap/block capture, are
+accounted for. It is a low-volume compatibility observation, not user telemetry,
+a consensus proof or a deployed BSSR network.
+
+The [graph experiment](results/routing-benchmark.json) also preserves a negative
+result. With no failed nodes, the observed sample found cache shards in **668 of
+2,560 lookups**, versus **723–822** for eight degree-matched rewired controls and
+**832** for a conventional equal-edge-budget overlay. A direct-owner reference
+found all 2,560; it uses a known directory and is not edge-constrained. Contact
+counts, failure scenarios and all seeds are published, not just successful paths.
+The observed graph used fewer contacts but had fewer hits; no general advantage
+or cost conclusion follows. [Interpretation and rejected assumptions](docs/release-v0.2.md).
+
 ## Reproduce the evidence
 
 Python 3.12+; no third-party dependencies are required by the Python core.
@@ -87,6 +146,8 @@ python3 -m unittest discover -s tests -v
 python3 scripts/demo_continuity.py
 python3 scripts/verify_history.py results/checkpoints.json
 python3 scripts/benchmark.py
+python3 scripts/demo_edge.py
+python3 scripts/benchmark_routing.py
 ```
 
 With an existing [Foundry installation](https://getfoundry.sh/):
@@ -101,6 +162,17 @@ starts its own Anvil, uses unlocked synthetic test accounts without exposing key
 and stops only the processes it created. A local chain ID of 97 is **not** a BSC
 testnet transaction. No public-chain signer or real-wallet key management exists.
 
+The public compatibility probe is **opt-in** and is not run by CI:
+
+```sh
+python3 scripts/probe_bsc_rpc.py --upstream https://bsc-dataseed.bnbchain.org
+```
+
+Public providers can time out, reject historical reads or prune state. Failed runs
+produce a failure report instead of leaving an older success looking current.
+The fixture experiments are offline and deterministic; a public rerun selects a
+new block and may have different values or fail. No retries are hidden.
+
 Included evidence: [verification summary](results/verification.json),
 [checkpoint replay](results/checkpoints.json), [cross-runtime consistency](results/cross-python.json),
 [quorum rejection and counterfactual](results/quorum-verification.json).
@@ -112,9 +184,10 @@ biological superiority. Changing spike patterns does not prove better RPC routin
 ![Proposed BSSR pipeline and evidence gates](docs/diagrams/bssr-gates.svg)
 
 BSSR studies an **outer edge layer**, leaving PoSA and EVM rules unchanged.
-Potential roles include exact-context request coalescing, bounded read caching,
-verified data distribution and fault-aware routing. Correctness, reorg behavior,
-trust and added infrastructure cost are explicit constraints—not assumed away.
+Pinned-state caching/coalescing is implemented in the research edge. General peer
+distribution and biological routing remain hypotheses beyond this module.
+Correctness, reorg behavior, trust and added infrastructure cost are explicit
+constraints—not assumed away.
 
 The [cost model](docs/bsc-feasibility.md#cost-scenarios-not-measured-savings) separates
 avoidable RPC cost from total node cost and subtracts new relay/verification cost.
@@ -131,7 +204,9 @@ measured by this release.
 | 3. EVM witness-quorum registry and receipt adapter | Included; local EVM evidence |
 | 4. Browser compute client and validation API | Separate codebase; source release pending |
 | 5. Measured-soma WebGL visualization | Separate codebase; source release pending |
-| 6. BSSR RPC edge client and WAN experiments | Proposed; implementation/benchmarks pending |
+| 6a. Bounded read-only RPC edge | Included in v0.2; local HTTP/process tests and public read probe |
+| 6b. Topology lookup controls | Included in v0.2 as a separate simulation; no superiority established |
+| 6c. Biological peer integration and independent WAN | Not implemented; implementation/benchmarks pending |
 
 Optional wire-protocol research, including legacy Stratum experiments, must have
 its own reviewed release and must not be confused with the current HTTP demo.
@@ -139,6 +214,8 @@ its own reviewed release and must not be confused with the current HTTP demo.
 ## Documentation
 
 - [BSSR feasibility and cost scenarios](docs/bsc-feasibility.md)
+- [v0.2 findings and reproduction](docs/release-v0.2.md)
+- [RPC API and cache semantics](docs/rpc-edge.md)
 - [Protocol and model semantics](docs/protocol.md)
 - [Architecture decisions](docs/architecture.md)
 - [Claim-to-evidence ledger](docs/claims.md)
