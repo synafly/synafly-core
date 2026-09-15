@@ -1,0 +1,13 @@
+flowchart LR
+  graph["Real graph excerpt | MaleCNS v1.0 | 256 nodes · 605 edges | Pinned data provenance"]
+  model["Integer state model | Graph-weighted dynamics | Explicit inputs + parameters | Illustrative physiology"]
+  checkpoint["Checkpoint engine | Canonical JSON + SHA-256 | Parent-linked hash chain | Full replay before acceptance"]
+  keepers["Keeper replicas | Separate processes / stores | Peer pulls + operator control | Fast-forward only"]
+  registry["ContinuityRegistry | 2-of-3 witness quorum | EIP-191 personal-sign | Tested on local EVM"]
+  publicChain["Public BSC anchors | Target deployment | Independent witness operators | Not yet deployed"]
+  style publicChain stroke-dasharray:5 5
+  graph -->|"weights"| model
+  model -->|"state and inputs"| checkpoint
+  checkpoint -->|"replay-verified copy"| keepers
+  checkpoint -->|"operator preparation and external attestations"| registry
+  registry -->|"future public deployment"| publicChain

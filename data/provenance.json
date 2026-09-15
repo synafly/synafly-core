@@ -1,0 +1,21 @@
+{
+  "dataset": "male-cns:v1.0",
+  "license": "CC-BY-4.0",
+  "source_url": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather?generation=1780494887545976",
+  "generation": "1780494887545976",
+  "source_range": "bytes 0-521799",
+  "range_sha256": "330ec2531a258e3da3b679e332704af83ce3d1d737c77d520848ea43d51cbf76",
+  "full_source_hash_verified": false,
+  "annotations_sha256": "2177e246113e4cfbf1e7772ec37c6da1955ff22e8063d0b1f833101f99a9a3b2",
+  "records_read": 65536,
+  "nodes": 256,
+  "edges": 605,
+  "sample_file_sha256": "ff163f71b06f833fde3cc1d2b2792ac56b4f1891f8e212f5c42ee22d04c8fb92",
+  "sampling": "First complete Arrow record batch; remove nonannotated/glial/artifact/self-loop edges; undirected BFS from smallest available body ID with ascending neighbors, first256 nodes; retain observed directed weighted edges among selected nodes.",
+  "limitations": [
+    "The first batch is enriched for high-weight edges. This is not a representative or complete induced subgraph.",
+    "Later batches may contain additional edges between these neurons. Missing edges are not filled.",
+    "Synapse counts are real; model signs, dynamics and parameters are illustrative. No claim of whole-brain emulation."
+  ],
+  "attribution": "MaleCNS collaboration: FlyEM / HHMI Janelia, University of Cambridge, MRC LMB and Google Research. Source and license: https://male-cns.janelia.org/download/"
+}

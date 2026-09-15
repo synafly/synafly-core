@@ -1,0 +1,32 @@
+{
+  "experiment": "local-evm-checkpoint-anchor",
+  "network": "LOCAL ANVIL ONLY",
+  "chain_id": 97,
+  "public_bsc_deployment": false,
+  "note": "Using chain ID 97 locally is not a BSC testnet transaction. No real wallet or currency used.",
+  "registry_address": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "committee_size": 3,
+  "threshold": 2,
+  "genesis_and_successor_verified": true,
+  "proofs": [
+    {
+      "chain_id": 97,
+      "transaction_hash": "0x3a0af713415304ef977b6b038f7db18933f19ea50eb09578ce7d6e6bd787db44",
+      "block_number": 2,
+      "confirmations": 1,
+      "checkpoint_hash": "8e2747f56724d5b2b11c43d31be319d1bdffa03f872f1d6aeec00fe04f99b447",
+      "rpc_trust": "Configured RPC; not a BSC consensus light-client proof",
+      "gas_used": 136211
+    },
+    {
+      "chain_id": 97,
+      "transaction_hash": "0xabc3398779b1fbf8ceff95ebc243e9862d98371dbe802c0682b258b2f99f5246",
+      "block_number": 3,
+      "confirmations": 1,
+      "checkpoint_hash": "95b52ee2ba78dd2b9915e753bc13ba703fbc1ba192d158730ea26a25b68f7cb0",
+      "rpc_trust": "Configured RPC; not a BSC consensus light-client proof",
+      "gas_used": 63080
+    }
+  ],
+  "runtime_code_sha256": "1787b619e57e490069397f547ca4fe943ab44d2275266b4453fc1e9cf2d8115e"
+}
