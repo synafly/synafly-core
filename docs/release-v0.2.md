@@ -19,10 +19,13 @@ as a biological routing advantage.
 
 ## Experiment A: actual HTTP and separate edge processes
 
-Run `python3 scripts/demo_edge.py`. Every configuration uses the same 38-request
+Run `python3 scripts/demo_edge.py`. Every configuration uses the same 38-state-query
 fixture: cold concurrent requests, warm repeats, a different block, changing
 `latest` state, canonicality failures and missing blocks. The fixture controls
 when reads complete so simultaneous misses are observed rather than assumed.
+The two fixture block hashes compete at one synthetic height; changing the head
+orphans the other. Local health/metrics GETs are not state queries and never call
+the origin. This fixture is not a full blockchain emulator.
 
 | Configuration | State reads at origin | Identity calls | Total origin RPC calls |
 |---|---:|---:|---:|

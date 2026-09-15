@@ -107,7 +107,7 @@ are involved. [RPC profile and resource bounds](docs/rpc-edge.md).
 
 ### What the experiments establish
 
-For the same **38-request synthetic HTTP workload**, every mode returned identical
+For the same **38-state-query synthetic HTTP workload**, every mode returned identical
 expected results. Origin calls, **including two startup identity checks**, were:
 
 | Configuration | Origin RPC calls |
@@ -117,7 +117,8 @@ expected results. Origin calls, **including two startup identity checks**, were:
 | Coalescing only | 33 |
 | Cache + coalescing | 18 |
 
-[Raw HTTP evidence](results/edge-http.json). These are request counts for a stated
+[Raw HTTP evidence](results/edge-http.json). Local health/metrics GETs are excluded
+from the state-query count and do not call the origin. These are counts for a stated
 workload, not measured node-cost savings or biological performance gains.
 
 The [public BSC probe](results/bsc-read-probe.json) compared 16 controlled reads

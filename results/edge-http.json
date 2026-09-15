@@ -1,7 +1,7 @@
 {
   "experiment": "read-only-edge-http-ablation",
   "environment": "Real loopback HTTP origin plus a separate edge process per configuration; one host, not WAN decentralization.",
-  "workload": "38 synthetic reads: 8 simultaneous cold pinned reads, 8 warm repeats, 8 alternate-block repeats, 8 changing latest reads, 4 noncanonical-required errors and 2 missing-block errors.",
+  "workload": "38 synthetic state queries: 8 simultaneous cold pinned reads, 8 warm repeats, 8 alternate-block repeats, 8 changing latest reads, 4 canonical-required reads of an orphan and 2 missing-block errors. Local health/metrics GETs are not state queries.",
   "accounting": "Origin counts include two identity-bootstrap calls per configuration. JSON byte counts exclude HTTP/TLS overhead. No host hardware, latency benchmark or monetary savings is inferred.",
   "attribution": "Cache/coalescing primitives only. The biological graph is not involved in this experiment.",
   "public_network_used": false,
@@ -145,7 +145,7 @@
     "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
     "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171",
     "synafly_lab/edge_server.py": "d57e04e6618119cbd5c8454a8fac2381e1b1f5f05a18aa66e56c40582fecd56d",
-    "scripts/demo_edge.py": "ef89af6798e845e115ab9edc3b2e5d01318082a4370f50f209b841fa1ed118a2",
-    "tests/rpc_fixture.py": "2a20c8befc6b6c1c59dcc4bcd4e39465c930eac9f3f9c708a36539c58ae38cbb"
+    "scripts/demo_edge.py": "08d7963a3f01ef67a91dfce8ac92419184632e2eb06d562b8c75dc08c5103249",
+    "tests/rpc_fixture.py": "a7856eefd35a516870475225d6b19a01c223b260777b549aba355d9227d8cb25"
   }
 }

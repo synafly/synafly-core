@@ -88,7 +88,7 @@ def run_demo(output):
     results=[run_mode(*mode) for mode in modes]
     assert len({row['outcomes_sha256'] for row in results})==1
     report={'experiment':'read-only-edge-http-ablation','environment':'Real loopback HTTP origin plus a separate edge process per configuration; one host, not WAN decentralization.',
-        'workload':'38 synthetic reads: 8 simultaneous cold pinned reads, 8 warm repeats, 8 alternate-block repeats, 8 changing latest reads, 4 noncanonical-required errors and 2 missing-block errors.',
+        'workload':'38 synthetic state queries: 8 simultaneous cold pinned reads, 8 warm repeats, 8 alternate-block repeats, 8 changing latest reads, 4 canonical-required reads of an orphan and 2 missing-block errors. Local health/metrics GETs are not state queries.',
         'accounting':'Origin counts include two identity-bootstrap calls per configuration. JSON byte counts exclude HTTP/TLS overhead. No host hardware, latency benchmark or monetary savings is inferred.',
         'attribution':'Cache/coalescing primitives only. The biological graph is not involved in this experiment.',
         'public_network_used':False,'blockchain_transactions_sent':0,

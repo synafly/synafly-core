@@ -8,6 +8,7 @@ import time
 from synafly_lab.rpc import NetworkIdentity, READ_METHODS, encode
 
 GENESIS = '0x' + '01' * 32
+# A and B model competing blocks at one synthetic height, not ancestor/descendant.
 BLOCK_A = '0x' + '11' * 32
 BLOCK_B = '0x' + '22' * 32
 BLOCK_MISSING = '0x' + '33' * 32
