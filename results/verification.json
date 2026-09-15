@@ -1,6 +1,6 @@
 {
   "status": "passed-local-research-checks",
-  "python_tests": 29,
+  "python_tests": 30,
   "solidity_tests": 10,
   "solidity_fuzz_runs": 128,
   "network_tests": "Real loopback HTTP nodes and real local Anvil JSON-RPC, no public-chain transactions",

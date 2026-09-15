@@ -10,6 +10,12 @@ class ReleaseTests(unittest.TestCase):
         self.assertNotIn('contracts/SynaFlyRegistry.sol',text)
         self.assertNotIn('EIP-712 typed signature verification',text)
         self.assertNotIn('Merkle-tree state commitments',text)
+    def test_public_docs_do_not_promote_a_token_contract(self):
+        for p in [Path('README.md'),*Path('docs').rglob('*.md')]:
+            text=p.read_text().lower()
+            self.assertNotRegex(text,r'https?://(?:www\.)?bscscan\.com/token/0x[0-9a-f]{40}')
+            for phrase in ['project-designated bsc token','project token listed','creator-tax']:
+                self.assertNotIn(phrase,text,str(p))
     def test_diagrams_have_no_active_or_remote_content(self):
         for p in Path('docs/diagrams').glob('*.svg'):
             text=p.read_text();ET.fromstring(text)

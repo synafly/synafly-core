@@ -53,7 +53,7 @@
     "tests/test_anchor.py": "bb05a8392de629cc9a9895c286a7673c059e393361ac515ef9343a15727ad3ba",
     "tests/test_core.py": "511ea8d0a1109c59a939b40081f7ddf2d230ca5e910c99508f332852eb2b00bc",
     "tests/test_nodes.py": "c34db634eb4bf8276d8baa1dfe778c23d4329eb3bce801340ea149e8ca536ff6",
-    "tests/test_release_docs.py": "08ed7e7d15b6824accca3c9e1acacd238f8142e22092903c2e4608d8dcd7caa3"
+    "tests/test_release_docs.py": "b92eaea8c7288e154486ee33db368ba45784ebe164295bb64c58d0f162829798"
   },
   "scope": "Source/data/docs; results excluded from this source fingerprint",
   "screening": "Limited literal credential/path checks; not a security audit"
