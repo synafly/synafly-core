@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">Keeper failure → verified recovery</title><desc id="desc">Reference experiment: three processes on one host, not geographical decentralization.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#f0b90b"/></marker></defs>
+<rect width="1440" height="760" rx="20" fill="#0b0e11"/>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-size:38px;font-weight:700;fill:#f4f4ee}.sub{font-size:20px;fill:#b6c0c9}.label{font-size:22px;font-weight:700;fill:#f0b90b}.body{font-size:18px;fill:#e4e8eb}.note{font-size:16px;fill:#a4afb9}.edge{fill:none;stroke:#f0b90b;stroke-width:2;marker-end:url(#arrow)}</style>
+<text class="title" x="48" y="66">Keeper failure → verified recovery</text>
+<text class="sub" x="48" y="106">Reference experiment: three processes on one host, not geographical decentralization.</text>
+<rect x="48" y="170" width="280" height="130" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="68" y="206">1 · Keeper A</text>
+<text class="body" x="68" y="239">Advance explicit inputs</text>
+<text class="body" x="68" y="265">Store checkpoint history</text>
+<rect x="430" y="170" width="340" height="130" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="450" y="206">2 · Keeper B</text>
+<text class="body" x="450" y="239">Pull and replay-check history</text>
+<text class="body" x="450" y="265">Keep an independent copy</text>
+<rect x="885" y="170" width="420" height="130" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="905" y="206">3 · Original stops</text>
+<text class="body" x="905" y="239">Test harness terminates A</text>
+<text class="body" x="905" y="265">No further access to A</text>
+<rect x="885" y="450" width="420" height="145" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="905" y="486">4 · Fresh Keeper C</text>
+<text class="body" x="905" y="519">Fetch graph / spec from B</text>
+<text class="body" x="905" y="545">Pull complete missing history</text>
+<rect x="430" y="450" width="340" height="145" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="450" y="486">5 · Verify every step</text>
+<text class="body" x="450" y="519">Check run, model and parent</text>
+<text class="body" x="450" y="545">Recompute the complete state</text>
+<text class="body" x="450" y="571">Reject tampered or forked data</text>
+<rect x="48" y="450" width="320" height="145" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="68" y="486">6 · Continue</text>
+<text class="body" x="68" y="519">Atomic fast-forward import</text>
+<text class="body" x="68" y="545">Tick 72 matches uninterrupted</text>
+<text class="body" x="68" y="571">execution byte for byte</text>
+<polyline class="edge" points="328,235 425,235"/>
+<polyline class="edge" points="770,235 880,235"/>
+<polyline class="edge" points="1095,300 1095,445"/>
+<polyline class="edge" points="600,300 600,373 1000,373 1000,445"/>
+<polyline class="edge" points="885,522 775,522"/>
+<polyline class="edge" points="430,522 373,522"/>
+<text class="note" x="48" y="690">The demonstrated result is recovery after failure. Automatic WAN self-healing is not claimed.</text>
+<text class="note" x="48" y="716">A retained graph, model and at least one valid copy are required; a hash alone cannot restore missing data.</text>
+</svg>

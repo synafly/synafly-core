@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">SynaFly Core Lab · State continuity</title><desc id="desc">Implemented research components; public-chain deployment is a separate milestone.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#f0b90b"/></marker></defs>
+<rect width="1440" height="760" rx="20" fill="#0b0e11"/>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-size:38px;font-weight:700;fill:#f4f4ee}.sub{font-size:20px;fill:#b6c0c9}.label{font-size:22px;font-weight:700;fill:#f0b90b}.body{font-size:18px;fill:#e4e8eb}.note{font-size:16px;fill:#a4afb9}.edge{fill:none;stroke:#f0b90b;stroke-width:2;marker-end:url(#arrow)}</style>
+<text class="title" x="48" y="66">SynaFly Core Lab · State continuity</text>
+<text class="sub" x="48" y="106">Implemented research components; public-chain deployment is a separate milestone.</text>
+<rect x="48" y="180" width="260" height="158" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="68" y="216">Real graph excerpt</text>
+<text class="body" x="68" y="249">MaleCNS v1.0</text>
+<text class="body" x="68" y="275">256 nodes · 605 edges</text>
+<text class="body" x="68" y="301">Pinned data provenance</text>
+<rect x="370" y="180" width="280" height="158" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="390" y="216">Integer state model</text>
+<text class="body" x="390" y="249">Graph-weighted dynamics</text>
+<text class="body" x="390" y="275">Explicit inputs + parameters</text>
+<text class="body" x="390" y="301">Illustrative physiology</text>
+<rect x="715" y="180" width="310" height="158" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="735" y="216">Checkpoint engine</text>
+<text class="body" x="735" y="249">Canonical JSON + SHA-256</text>
+<text class="body" x="735" y="275">Parent-linked hash chain</text>
+<text class="body" x="735" y="301">Full replay before acceptance</text>
+<rect x="1090" y="180" width="302" height="158" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="1110" y="216">Keeper replicas</text>
+<text class="body" x="1110" y="249">Separate processes / stores</text>
+<text class="body" x="1110" y="275">Peer pulls + operator control</text>
+<text class="body" x="1110" y="301">Fast-forward only</text>
+<rect x="715" y="462" width="310" height="158" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="735" y="498">ContinuityRegistry</text>
+<text class="body" x="735" y="531">2-of-3 witness quorum</text>
+<text class="body" x="735" y="557">EIP-191 personal-sign</text>
+<text class="body" x="735" y="583">Tested on local EVM</text>
+<rect x="1090" y="462" width="302" height="158" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="1110" y="498">Public BSC anchors</text>
+<text class="body" x="1110" y="531">Target deployment</text>
+<text class="body" x="1110" y="557">Independent witness operators</text>
+<text class="body" x="1110" y="583">Not yet deployed</text>
+<polyline class="edge" points="308,258 365,258"/>
+<polyline class="edge" points="650,258 710,258"/>
+<polyline class="edge" points="1025,258 1085,258"/>
+<polyline class="edge" points="870,338 870,457"/>
+<polyline class="edge" points="1025,540 1085,540"/>
+<text class="note" x="48" y="690">Keepers retain the recoverable bytes. The registry stores commitments; it does not execute the model.</text>
+<text class="note" x="48" y="716">Solid: implemented local mechanisms. Dashed: future public-network milestone.</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "experiment": "exact-quorum-revert-and-counterfactual",
+  "normal_test": "testSingleWitnessCannotCommit",
+  "observed_call": "ContinuityRegistry.commit with valid commitment and one witness signature",
+  "observed_revert": "InsufficientQuorum()",
+  "normal_test_passed": true,
+  "counterfactual": "Only expected selector changed to UnknownWitness in a disposable copy",
+  "counterfactual_failed_as_required": true,
+  "not_proven": "Public BSC deployment, scientific validity, independent human witness operation or a general security audit"
+}

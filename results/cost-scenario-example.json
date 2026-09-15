@@ -1,0 +1,19 @@
+{
+  "kind": "illustrative_scenario_not_measured",
+  "inputs": {
+    "nodes": 100,
+    "monthly_node_cost": "1000",
+    "rpc_cost_share": "0.25",
+    "offload_share": "0.5",
+    "realization_share": "0.5",
+    "annual_relay_cost": "20000",
+    "annual_verification_cost": "10000",
+    "annual_operations_cost": "5000"
+  },
+  "baseline_annual": "1200000.00",
+  "gross_avoidable_annual": "75000.00",
+  "added_annual_cost": "35000.00",
+  "net_annual": "40000.00",
+  "currency": "USD",
+  "evidence": "Arithmetic only; no BSC node-count, traffic or fleet-cost measurement is supplied."
+}

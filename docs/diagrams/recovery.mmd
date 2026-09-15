@@ -1,0 +1,13 @@
+flowchart LR
+  a["1 · Keeper A | Advance explicit inputs | Store checkpoint history"]
+  b["2 · Keeper B | Pull and replay-check history | Keep an independent copy"]
+  stopA["3 · Original stops | Test harness terminates A | No further access to A"]
+  c["4 · Fresh Keeper C | Fetch graph / spec from B | Pull complete missing history"]
+  replay["5 · Verify every step | Check run, model and parent | Recompute the complete state | Reject tampered or forked data"]
+  resume["6 · Continue | Atomic fast-forward import | Tick 72 matches uninterrupted | execution byte for byte"]
+  a -->|"replicate"| b
+  b -->|"after replication"| stopA
+  stopA -->|"fresh process"| c
+  b -->|"surviving peer supplies bytes"| c
+  c -->|"verify history"| replay
+  replay -->|"valid fast-forward"| resume

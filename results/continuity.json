@@ -1,0 +1,17 @@
+{
+  "experiment": "three-process-checkpoint-recovery",
+  "environment": "single-host loopback, independent processes and SQLite files; not geographically decentralized",
+  "nodes": 3,
+  "graph_nodes": 256,
+  "graph_edges": 605,
+  "run_id": "5cd4e063603acfb11d694299ac2c2275e857950df49492ca5d779b144722b44a",
+  "original_terminated_before_new_node_start": true,
+  "graph_restored_from_surviving_peer": true,
+  "replicated_checkpoints": 8,
+  "recovered_checkpoint": "c74b334ba24713329f70fc1448c0d531f34b6f8b450a49d1ceac14a947940a76",
+  "resumed_tick": 72,
+  "resumed_state_hash": "9410c814f8cf20794658e15e240cacef1865ae0fcf52046f59cbdbe31b42de73",
+  "matches_uninterrupted_execution": true,
+  "tokens_or_private_keys_in_report": false,
+  "public_bsc_transaction": false
+}
