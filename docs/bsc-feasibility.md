@@ -5,8 +5,10 @@
 BSSR is a research and engineering program, not an already deployed RPC network.
 The objective is ambitious: investigate whether sparse, connectome-inspired
 coordination can reduce avoidable edge work while retaining exact response
-semantics and an explicit security model. The present release establishes
-state-continuity primitives; it does not establish those performance advantages.
+semantics and an explicit security model. The present release provides
+state-continuity primitives, a bounded read-only RPC edge and controlled comparison
+experiments. Request-count reductions are measured for stated workloads; biological
+superiority, WAN performance and ecosystem cost reductions are not established.
 
 ## Problem and hypothesis
 
@@ -26,10 +28,10 @@ synapses. The model parameters are illustrative and the connection sample is sma
 
 ![BSSR proposal and evidence gates](diagrams/bssr-gates.svg)
 
-| Role | Proposed intervention | Required proof | Current status |
+| Role | Intervention / hypothesis | Required proof | Current status |
 |---|---|---|---|
-| Public RPC edge | Exact-context coalescing and bounded read cache | Correct cache keys, freshness/finality policy, reorg handling and measured origin-call reduction | Not implemented here; the live website is not an RPC cache |
-| Data distribution | Sparse directed peer dissemination | Transfer cost, tail latency, failures and churn against matched baselines | Keeper checkpoint pulls tested locally; general routing not implemented |
+| Public RPC edge | Exact-context coalescing and bounded read cache | Correct cache keys, freshness/finality policy, reorg handling and measured origin-call reduction | Four-method loopback edge implemented; caches only explicit noncanonical-required block hashes. Dynamic/canonical-required reads bypass. The live website is separate |
+| Data distribution | Sparse directed peer dissemination | Transfer cost, tail latency, failures and churn against matched baselines | Keeper pulls and graph lookup simulation tested separately; biological RPC peer integration not implemented |
 | State continuity | Replay-verified checkpoint hash chains | Restored graph/input/state matches uninterrupted execution | Implemented; single-host multi-process experiment |
 | Commitment ordering | Fixed-quorum EVM registry | Signature, parent, sequence and model-binding correctness; then public-chain evidence | `ContinuityRegistry.sol` tested locally; public BSC deployment pending |
 | Consensus/full-node execution | Leave PoSA and EVM transitions unchanged | Protocol-equivalent outputs for any claimed replacement role | Not implemented or replaced |
@@ -87,13 +89,23 @@ quorum, sequence and parent continuity. Foundry and actual local Anvil receipts
 exercise the mechanism. Public BSC anchoring and independent witness operation
 remain separate, incomplete milestones.
 
-### Gate 3 — role-correct BSSR prototype: pending
+### Gate 3 — role-correct BSSR prototype: partially closed
 
-Implement an explicit read-only RPC surface, cache/coalescing semantics, peer
-selection and fallback. Test stale state, reorgs, duplicate requests, malicious
-responses and bounded resource behavior before reporting an offload percentage.
-Compare against conventional nonbiological caching/routing with equal budgets.
-Browser SHA-256d activity and rendering FPS do not pass this gate.
+**3a: bounded read edge implemented and tested.** Four read methods, immutable
+state-key isolation, single-flight coalescing, bounded TTL/LRU, overload handling,
+malformed-response rejection and reorg-sensitive bypass are exercised by actual
+HTTP/process tests. The opt-in public BSC probe compares controlled reads at a
+fixed block. This is not a transparent cache for `latest` or a consensus verifier.
+
+**3b: topology controls implemented as a separate simulation.** The observed
+sample, eight degree-matched rewirings and a conventional equal-edge overlay use
+identical workloads and failure sets. Negative lookup results are retained. A
+direct-owner reference is explicitly not edge-constrained.
+
+**3c: biological peer integration remains open.** The graph is not used by the
+HTTP gateway. A real multi-operator peer-cache/routing protocol, response trust,
+discovery cost and matched WAN experiments remain required. Browser SHA-256d
+activity and rendering FPS do not pass this gate. [v0.2 results](release-v0.2.md).
 
 ### Gate 4 — independent WAN and cost validation: pending
 

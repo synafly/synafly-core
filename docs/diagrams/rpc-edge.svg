@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">Read-only RPC edge · v0.2</title><desc id="desc">Explicit state identity, bounded cache and one trusted upstream.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#f0b90b"/></marker></defs>
+<rect width="1440" height="760" rx="20" fill="#0b0e11"/>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-size:38px;font-weight:700;fill:#f4f4ee}.sub{font-size:20px;fill:#b6c0c9}.label{font-size:22px;font-weight:700;fill:#f0b90b}.body{font-size:18px;fill:#e4e8eb}.note{font-size:16px;fill:#a4afb9}.edge{fill:none;stroke:#f0b90b;stroke-width:2;marker-end:url(#arrow)}</style>
+<text class="title" x="48" y="66">Read-only RPC edge · v0.2</text>
+<text class="sub" x="48" y="106">Explicit state identity, bounded cache and one trusted upstream.</text>
+<rect x="48" y="195" width="300" height="160" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="68" y="231">Programmatic client</text>
+<text class="body" x="68" y="264">Four read methods</text>
+<text class="body" x="68" y="290">Caller IDs preserved</text>
+<text class="body" x="68" y="316">Loopback API · batch up to 8</text>
+<rect x="410" y="195" width="345" height="160" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="430" y="231">State-context gate</text>
+<text class="body" x="430" y="264">Chain ID + genesis at startup</text>
+<text class="body" x="430" y="290">Method + address / slot</text>
+<text class="body" x="430" y="316">Typed block selector</text>
+<rect x="825" y="150" width="540" height="160" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="845" y="186">Eligible immutable state</text>
+<text class="body" x="845" y="219">blockHash; canonicality false</text>
+<text class="body" x="845" y="245">LRU / TTL + single-flight</text>
+<text class="body" x="845" y="271">Hit returns locally; miss goes upstream</text>
+<rect x="825" y="370" width="540" height="160" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="845" y="406">Uncached state</text>
+<text class="body" x="845" y="439">latest / pending / block numbers</text>
+<text class="body" x="845" y="465">requireCanonical: true</text>
+<text class="body" x="845" y="491">No cached latest-state substitution</text>
+<rect x="410" y="550" width="955" height="115" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="430" y="586">Configured origin · no consensus proof</text>
+<text class="body" x="430" y="619">TLS verification · validated responses · errors never cached</text>
+<text class="body" x="430" y="645">Post-connect response deadline; DNS remains a platform boundary</text>
+<polyline class="edge" points="348,275 405,275"/>
+<polyline class="edge" points="755,250 790,250 790,230 820,230"/>
+<polyline class="edge" points="755,325 790,325 790,445 820,445"/>
+<polyline class="edge" points="1365,230 1392,230 1392,610 1370,610"/>
+<polyline class="edge" points="1100,530 1100,545"/>
+<text class="note" x="48" y="690">The biological graph is not in this HTTP path. Graph lookup comparisons are separate experiments.</text>
+<text class="note" x="48" y="716">No transaction submission, wallet keys, public serving or full-node replacement.</text>
+</svg>

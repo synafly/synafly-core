@@ -1,22 +1,13 @@
 #!/usr/bin/env python3
 """Reproducible ablation, not evidence of BSC node replacement or biological fidelity."""
-import argparse,copy,hashlib,json,random,sys
+import argparse,copy,hashlib,json,sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from synafly_lab.canonical import parse,digest,canonical
 from synafly_lab.checkpoint import Run
 from synafly_lab.model import stimulus
+from synafly_lab.topology import rewire
 ROOT=Path(__file__).resolve().parents[1]
-
-def rewire(graph,seed):
-    # Directed double-edge swaps preserve in/out degree and outgoing weights.
-    # Incoming weighted strength is NOT necessarily preserved.
-    g=copy.deepcopy(graph);edges=g['edges'];pairs={(a,b) for a,b,w in edges};rng=random.Random(seed);swaps=0
-    for _ in range(len(edges)*20):
-        i,j=rng.sample(range(len(edges)),2);a,b,w=edges[i];c,d,v=edges[j]
-        if a==c or b==d or a==d or c==b or (a,d) in pairs or (c,b) in pairs:continue
-        pairs.remove((a,b));pairs.remove((c,d));pairs.add((a,d));pairs.add((c,b));edges[i]=[a,d,w];edges[j]=[c,b,v];swaps+=1
-    g['edges']=sorted(edges);return g,swaps
 
 def run_benchmark(out):
     graph=parse((ROOT/'data/malecns-sample.json').read_bytes());shuffled,swaps=rewire(graph,42);empty=copy.deepcopy(graph);empty['edges']=[]

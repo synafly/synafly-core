@@ -1,9 +1,9 @@
 {
   "status": "passed-local-research-checks",
-  "python_tests": 30,
+  "python_tests": 63,
   "solidity_tests": 10,
   "solidity_fuzz_runs": 128,
-  "network_tests": "Real loopback HTTP nodes and real local Anvil JSON-RPC, no public-chain transactions",
+  "network_tests": "Real loopback HTTP keepers and RPC-edge child processes, local Anvil, plus a bounded public BSC read-only compatibility probe; no public-chain transactions",
   "replay": "10 checkpoints independently verified; resumed tick72 matches uninterrupted state",
   "cross_runtime": [
     "CPython 3.12",
@@ -12,5 +12,28 @@
   "quorum_boundary": "Exact InsufficientQuorum revert reached; wrong-selector counterfactual fails",
   "public_bsc": "not deployed",
   "security_audit": false,
-  "privacy_release_checks": "Host platform/architecture/patch-version metadata removed from public reports; synthetic test data retained."
+  "privacy_release_checks": "Host platform/architecture/patch-version metadata removed from public reports; synthetic test data retained.",
+  "release": "0.2.0",
+  "rpc_edge": {
+    "python_runtime_families": [
+      "CPython 3.12",
+      "CPython 3.14"
+    ],
+    "offline_reports": "Exact semantic reproduction of HTTP and graph reports across both runtimes, including counters and fingerprints",
+    "public_probe": "27 controlled read-only RPC calls to one public BSC provider; same normalized values; not a consensus proof",
+    "provider_failures": "Retained in bsc-probe-observations.json",
+    "origin_call_ablation": [
+      40,
+      25,
+      33,
+      18
+    ],
+    "biological_routing_integrated": false
+  },
+  "topology_research": {
+    "strategies": 11,
+    "workload_seeds": 5,
+    "failure_scenarios": 3,
+    "biological_advantage_established": false
+  }
 }

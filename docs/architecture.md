@@ -1,6 +1,8 @@
 # Decision: state continuity, not an infrastructure-replacement claim
 
-Status: implemented local research prototype; see the claim ledger for evidence. Production website is separate.
+Status: implemented continuity foundation; see the claim ledger for evidence.
+The separate [v0.2 edge decision](edge-design.md) extends the research scope without
+changing this model/checkpoint protocol. The production website remains separate.
 
 The September 2026 discussion of digital fruit-fly continuity concerns preserving
 model state and interaction history so another host can resume it. This does not establish

@@ -1,0 +1,27 @@
+{
+  "scope": "Compatibility diagnostics, not a representative reliability sample or performance benchmark.",
+  "observations": [
+    {
+      "status": "failed",
+      "category": "transport interruption",
+      "error_code": -32002,
+      "request_count": null,
+      "phase": null,
+      "limit": "Exact request count and phase were not captured for this diagnostic; do not infer a rate from it."
+    },
+    {
+      "status": "failed",
+      "category": "upstream RPC rejection",
+      "error_code": -32000,
+      "phase": "pinned-cache: eth_getStorageAt: round 0",
+      "known_origin_rpc_calls": 27,
+      "root_cause": "Not established; reorg or pruning was not proven."
+    },
+    {
+      "status": "passed",
+      "category": "paired bounded read probe",
+      "report": "bsc-read-probe.json"
+    }
+  ],
+  "reporting_policy": "Failed reruns overwrite the output with failure status. Paired queries reduce time skew but do not guarantee upstream availability."
+}

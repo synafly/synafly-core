@@ -14,3 +14,6 @@ jobs:
       - run: python3 scripts/demo_continuity.py --out .cache/ci/continuity.json
       - run: python3 scripts/verify_history.py .cache/ci/checkpoints.json
       - run: python3 scripts/benchmark.py --out .cache/ci/ablation
+      - run: python3 scripts/demo_edge.py --out .cache/ci/edge-http.json
+      - run: python3 scripts/benchmark_routing.py --out .cache/ci/routing-benchmark.json
+      - run: python3 scripts/verify_evidence.py --edge .cache/ci/edge-http.json --routing .cache/ci/routing-benchmark.json

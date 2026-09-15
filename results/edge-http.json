@@ -1,0 +1,151 @@
+{
+  "experiment": "read-only-edge-http-ablation",
+  "environment": "Real loopback HTTP origin plus a separate edge process per configuration; one host, not WAN decentralization.",
+  "workload": "38 synthetic reads: 8 simultaneous cold pinned reads, 8 warm repeats, 8 alternate-block repeats, 8 changing latest reads, 4 noncanonical-required errors and 2 missing-block errors.",
+  "accounting": "Origin counts include two identity-bootstrap calls per configuration. JSON byte counts exclude HTTP/TLS overhead. No host hardware, latency benchmark or monetary savings is inferred.",
+  "attribution": "Cache/coalescing primitives only. The biological graph is not involved in this experiment.",
+  "public_network_used": false,
+  "blockchain_transactions_sent": 0,
+  "all_modes_return_identical_outcomes": true,
+  "results": [
+    {
+      "mode": "pass-through",
+      "cache_enabled": false,
+      "coalescing_enabled": false,
+      "client_requests": 38,
+      "outcomes_sha256": "f5d8249cce8fb6671366f24f2cd4711753b88dd04cbcde9d242c40329e75dd3c",
+      "all_expected_responses_match": true,
+      "measured": {
+        "edge": {
+          "bypassed_requests": 12,
+          "cache_entries": 0,
+          "cache_hits": 0,
+          "cache_misses": 26,
+          "cache_value_bytes": 0,
+          "capacity_rejections": 0,
+          "coalesced_waiters": 0,
+          "evictions": 0,
+          "inflight_keys": 0,
+          "origin_errors": 6,
+          "origin_reads": 38,
+          "pinned_requests": 26,
+          "read_requests": 38
+        },
+        "origin": {
+          "metadata_calls": 2,
+          "request_json_bytes": 7505,
+          "response_json_bytes": 2134,
+          "rpc_calls": 40,
+          "state_reads": 38
+        }
+      },
+      "fixture_peak_active_reads": 8
+    },
+    {
+      "mode": "cache-only",
+      "cache_enabled": true,
+      "coalescing_enabled": false,
+      "client_requests": 38,
+      "outcomes_sha256": "f5d8249cce8fb6671366f24f2cd4711753b88dd04cbcde9d242c40329e75dd3c",
+      "all_expected_responses_match": true,
+      "measured": {
+        "edge": {
+          "bypassed_requests": 12,
+          "cache_entries": 2,
+          "cache_hits": 15,
+          "cache_misses": 11,
+          "cache_value_bytes": 20,
+          "capacity_rejections": 0,
+          "coalesced_waiters": 0,
+          "evictions": 0,
+          "inflight_keys": 0,
+          "origin_errors": 6,
+          "origin_reads": 23,
+          "pinned_requests": 26,
+          "read_requests": 38
+        },
+        "origin": {
+          "metadata_calls": 2,
+          "request_json_bytes": 4280,
+          "response_json_bytes": 1429,
+          "rpc_calls": 25,
+          "state_reads": 23
+        }
+      },
+      "fixture_peak_active_reads": 8
+    },
+    {
+      "mode": "coalescing-only",
+      "cache_enabled": false,
+      "coalescing_enabled": true,
+      "client_requests": 38,
+      "outcomes_sha256": "f5d8249cce8fb6671366f24f2cd4711753b88dd04cbcde9d242c40329e75dd3c",
+      "all_expected_responses_match": true,
+      "measured": {
+        "edge": {
+          "bypassed_requests": 12,
+          "cache_entries": 0,
+          "cache_hits": 0,
+          "cache_misses": 19,
+          "cache_value_bytes": 0,
+          "capacity_rejections": 0,
+          "coalesced_waiters": 7,
+          "evictions": 0,
+          "inflight_keys": 0,
+          "origin_errors": 6,
+          "origin_reads": 31,
+          "pinned_requests": 26,
+          "read_requests": 38
+        },
+        "origin": {
+          "metadata_calls": 2,
+          "request_json_bytes": 6000,
+          "response_json_bytes": 1805,
+          "rpc_calls": 33,
+          "state_reads": 31
+        }
+      },
+      "fixture_peak_active_reads": 1
+    },
+    {
+      "mode": "cache-and-coalescing",
+      "cache_enabled": true,
+      "coalescing_enabled": true,
+      "client_requests": 38,
+      "outcomes_sha256": "f5d8249cce8fb6671366f24f2cd4711753b88dd04cbcde9d242c40329e75dd3c",
+      "all_expected_responses_match": true,
+      "measured": {
+        "edge": {
+          "bypassed_requests": 12,
+          "cache_entries": 2,
+          "cache_hits": 15,
+          "cache_misses": 4,
+          "cache_value_bytes": 20,
+          "capacity_rejections": 0,
+          "coalesced_waiters": 7,
+          "evictions": 0,
+          "inflight_keys": 0,
+          "origin_errors": 6,
+          "origin_reads": 16,
+          "pinned_requests": 26,
+          "read_requests": 38
+        },
+        "origin": {
+          "metadata_calls": 2,
+          "request_json_bytes": 2775,
+          "response_json_bytes": 1100,
+          "rpc_calls": 18,
+          "state_reads": 16
+        }
+      },
+      "fixture_peak_active_reads": 1
+    }
+  ],
+  "implementation_sha256": {
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171",
+    "synafly_lab/edge_server.py": "d57e04e6618119cbd5c8454a8fac2381e1b1f5f05a18aa66e56c40582fecd56d",
+    "scripts/demo_edge.py": "ef89af6798e845e115ab9edc3b2e5d01318082a4370f50f209b841fa1ed118a2",
+    "tests/rpc_fixture.py": "2a20c8befc6b6c1c59dcc4bcd4e39465c930eac9f3f9c708a36539c58ae38cbb"
+  }
+}

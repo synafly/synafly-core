@@ -34,6 +34,7 @@ here is a deterministic stimulus log, not an autobiographical memory claim.
 This is a partial, standalone research release. The live browser experience at
 [synafly.fyi](https://synafly.fyi/) is a different system. Do not describe the whole
 production product as open source solely because this repository is public.
-Future releases may add verified model adapters, independently operated keepers,
-public BSC checkpoints and measured relay experiments. These are not completed
-features until their source and reproduction evidence are actually released.
+The v0.2 release adds a bounded RPC edge and controlled comparisons, not a
+biological RPC network. Future releases may add verified model adapters,
+independently operated keepers, public BSC checkpoints and broader relay
+experiments. Their implementation and evidence must precede completion claims.
