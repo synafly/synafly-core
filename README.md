@@ -17,11 +17,9 @@ routing and cost-reduction hypotheses are specified in the
 implemented RPC relay or a measured ecosystem saving.
 
 - **Website / separate browser experience:** [synafly.fyi](https://synafly.fyi/)
-- **Project-designated BSC token:** [`0x259dd071f40d96e61f2bcc663bfac6898d957777`](https://bscscan.com/token/0x259dd071f40d96e61f2bcc663bfac6898d957777)
 - **Scope:** a partial release of research components, not a claim that the whole live product is open source.
 
-The token address is **not** a deployment address for `ContinuityRegistry`.
-Public research-registry deployments remain explicitly marked
+Public `ContinuityRegistry` deployments remain explicitly marked
 [not deployed](deployments/bsc-testnet.json).
 
 ## The vision: continuity beyond one host
@@ -137,15 +135,6 @@ measured by this release.
 
 Optional wire-protocol research, including legacy Stratum experiments, must have
 its own reviewed release and must not be confused with the current HTTP demo.
-
-## Project policy and technical enforcement
-
-The project's declared allocation policy is to direct **100% of token creator-tax
-proceeds received by the project** toward decentralized relay infrastructure.
-This does not mean all BSC transaction fees or all Flap platform fees. This
-research repository does not collect taxes, route funds or enforce the allocation.
-Recipient disclosures and public expenditure records are needed to verify policy
-execution; no return, buyback or price outcome is promised by this code.
 
 ## Documentation
 

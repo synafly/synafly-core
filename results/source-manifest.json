@@ -4,7 +4,7 @@
     ".gitignore": "e47f319a7c48e8dc9ac897c7342ddf0961d718937b81fd3682f469706a91a4ac",
     "AGENTS.md": "e1243039dbca55f787638f01d054692ca80d35ed061c09cbb838e1af017d803e",
     "LICENSE": "77ca6e39eabc2925e436b87c3d36bbaf4b3a0c2404522585a8d0360b1e91278f",
-    "README.md": "11de12e9b81fbb75c00b63b7b357758644b35e0c24572e89ab6e0fc18be649d9",
+    "README.md": "f9a4545ef5cc9cb8b16915627d444c596da484793eb9ff8a8791ece9e4f029b3",
     "RELEASING.md": "fba67f07afffabae986b6f0d9023685b2d2575af68119d901926ce858df57177",
     "SECURITY.md": "0018348839241b0a6b6947304c93562f4e32d2b429d392f963cad7a51eec9ae6",
     "abi/ContinuityRegistry.json": "543e91b915f6268f97555a8e6453f48368099f2d584f41e0c0587f91dedcb9b6",
@@ -16,7 +16,7 @@
     "deployments/bsc-mainnet.json": "69db2d157da90c80b3c03a87cad9442b5fb18eaf71052181dd10fb04aaafc035",
     "deployments/bsc-testnet.json": "1025fadad47a96387e1399a2d308a416ec2613cb58840247888404bd0df920bc",
     "docs/architecture.md": "f2fc89d7f440a183643aa0ace5c716ac338b7da766985fd652a57d6919ba7739",
-    "docs/bsc-feasibility.md": "67a6afab275079a6c698be928b5ef40a417483ff52fa8d2a768f6eb42c0ee80b",
+    "docs/bsc-feasibility.md": "b03d64aa04039a36258ded95d90a1b0fd4e04a70212e3c2b8787507c10b5467d",
     "docs/claims.md": "18d3ed2d4e20f3a851726f148076465f0b37d29aad619104637e4d98872faeba",
     "docs/data-reproduction.md": "c015a0ae6df0b8a2a33925fb340c68b9ec1d01826eecc1346f5f259532fd5250",
     "docs/diagrams/architecture.mmd": "17c48142150dd6c1f87a5d85c55983324932edbe22d05f861f35a59ab9aace8d",
@@ -53,7 +53,7 @@
     "tests/test_anchor.py": "bb05a8392de629cc9a9895c286a7673c059e393361ac515ef9343a15727ad3ba",
     "tests/test_core.py": "511ea8d0a1109c59a939b40081f7ddf2d230ca5e910c99508f332852eb2b00bc",
     "tests/test_nodes.py": "c34db634eb4bf8276d8baa1dfe778c23d4329eb3bce801340ea149e8ca536ff6",
-    "tests/test_release_docs.py": "08ed7e7d15b6824accca3c9e1acacd238f8142e22092903c2e4608d8dcd7caa3"
+    "tests/test_release_docs.py": "b92eaea8c7288e154486ee33db368ba45784ebe164295bb64c58d0f162829798"
   },
   "scope": "Source/data/docs; results excluded from this source fingerprint",
   "screening": "Limited literal credential/path checks; not a security audit"

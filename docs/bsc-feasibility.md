@@ -126,10 +126,6 @@ passing a finite sample alone does not prove universal equivalence or efficiency
 5. Publish raw results and adverse outcomes, separating simulation from WAN tests.
 6. Derive cost scenarios only after the relevant measurements exist.
 
-The project token listed in the main README is not the checkpoint-registry
-contract. Token policy, scientific results and registry deployment must remain
-separate disclosures.
-
 ## References
 
 - [BNB Chain validator roles and PoSA](https://docs.bnbchain.org/bnb-smart-chain/validator/overview/)
