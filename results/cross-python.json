@@ -1,0 +1,42 @@
+{
+  "experiment": "cross-python-deterministic-replay",
+  "versions": [
+    "CPython 3.14",
+    "CPython 3.12"
+  ],
+  "seeds_per_graph": 5,
+  "ticks_per_seed": 256,
+  "matched": true,
+  "results": [
+    {
+      "strategy": "observed-malecns",
+      "identical_final_state_hashes": [
+        "a0ed86c372e630628a58c11d2cf2949edd76730861bf8adfd4ac73ac09b0dfdc",
+        "366d01626e092a28c973e4df5914e9d3df7b581e055d1db6e19aaa1cebe196df",
+        "dbb22abac10842d75889a19d00d9831f8ef5fbca53a7e914e342d946fcbad5c6",
+        "108263a7fa7263aa0702ffbe83c12c6c54aaec7b90bb18309cf2b718be687541",
+        "20fa32c962789b69bef08e6453f23ca5ec7323baabbdac70cc76c92cda384346"
+      ]
+    },
+    {
+      "strategy": "degree-matched-rewired",
+      "identical_final_state_hashes": [
+        "52f4808dd9581e5aee5ea71f52edff367c78a014d9abcb443d1fc2a302defc57",
+        "2b5f059f8ab2d0f3a8365f6007406a4ea454f22da6dbfe274fc461461ecc710c",
+        "74a22bd8f2eda1dda01a2bd199bda216869b69acfffc4f1d4f2c2aeca2d2d01d",
+        "43111e9c9fcde929735dec706943ecacb8b26bce45ecc8440f9d517494264daa",
+        "43263ad1101bd93a6684165db3a571d098b5cc6ef8615877a5b5d1cef59251a8"
+      ]
+    },
+    {
+      "strategy": "no-edges-ablation",
+      "identical_final_state_hashes": [
+        "c9063913cd2f8d077d7be37f9dc4fcec7c2c3d18822c07e8c78f45942a6fe918",
+        "2cc481dfa3d063887f0bf80f691b6f379ffb0a3b5f2fd3151c3b49e90f670d1a",
+        "91a8bfc0d0bf4f3aaa4cd89d145fb0d55d51b0ecff6f1b279d23dc88ae3dc89e",
+        "71937e5205edc48c9712a9bfb9199ce2647f60ae95e015c1ac4890da9850f5d9",
+        "f77ef719d10446370bb81abc73da83feb88154bf681023e5c7ea36dec35aa526"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed-local-research-checks",
+  "python_tests": 29,
+  "solidity_tests": 10,
+  "solidity_fuzz_runs": 128,
+  "network_tests": "Real loopback HTTP nodes and real local Anvil JSON-RPC, no public-chain transactions",
+  "replay": "10 checkpoints independently verified; resumed tick72 matches uninterrupted state",
+  "cross_runtime": [
+    "CPython 3.12",
+    "CPython 3.14"
+  ],
+  "quorum_boundary": "Exact InsufficientQuorum revert reached; wrong-selector counterfactual fails",
+  "public_bsc": "not deployed",
+  "security_audit": false,
+  "privacy_release_checks": "Host platform/architecture/patch-version metadata removed from public reports; synthetic test data retained."
+}

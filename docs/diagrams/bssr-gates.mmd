@@ -1,0 +1,21 @@
+flowchart LR
+  client["Read-only client | Bounded method surface | Explicit block context"]
+  style client stroke-dasharray:5 5
+  cache["Context + coalescing | Exact request identity | Freshness / reorg rules"]
+  style cache stroke-dasharray:5 5
+  route["Sparse edge routing | Peer selection + fallback | Matched nonbiological baseline"]
+  style route stroke-dasharray:5 5
+  origin["BSC origin RPC | Unchanged PoSA / EVM | Measured upstream work"]
+  style origin stroke-dasharray:5 5
+  g1["Gate 1 · Local pass | Deterministic continuity | Peer recovery evidence"]
+  g2["Gate 2 · Local pass | Witness-quorum registry | Local EVM receipts"]
+  g3["Gate 3 · Pending | Role-correct RPC prototype | Adversarial correctness tests"]
+  style g3 stroke-dasharray:5 5
+  g4["Gate 4 · Pending | Independent WAN tests | Full cost / resource accounting"]
+  style g4 stroke-dasharray:5 5
+  client -->|"proposed request path"| cache
+  cache -->|"proposed peer lookup"| route
+  route -->|"cache miss / fallback"| origin
+  g1 -->|"prerequisite mechanisms"| g2
+  g2 -->|"next evidence gate"| g3
+  g3 -->|"before performance claims"| g4

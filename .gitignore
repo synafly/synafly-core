@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.cache/
+.local/
+.codex/
+out/
+cache/
+.env*
+!env.example
+*.sqlite*
+*.key
+*.pem
+dist/
