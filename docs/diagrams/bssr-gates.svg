@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="760" viewBox="0 0 1440 760" role="img" aria-labelledby="title desc">
+<title id="title">BSSR · Proposed edge layer and evidence gates</title><desc id="desc">Research blueprint. This RPC path is not implemented by the current keeper release.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#f0b90b"/></marker></defs>
+<rect width="1440" height="760" rx="20" fill="#0b0e11"/>
+<style>text{font-family:Arial,Helvetica,sans-serif} .title{font-size:38px;font-weight:700;fill:#f4f4ee}.sub{font-size:20px;fill:#b6c0c9}.label{font-size:22px;font-weight:700;fill:#f0b90b}.body{font-size:18px;fill:#e4e8eb}.note{font-size:16px;fill:#a4afb9}.edge{fill:none;stroke:#f0b90b;stroke-width:2;marker-end:url(#arrow)}</style>
+<text class="title" x="48" y="66">BSSR · Proposed edge layer and evidence gates</text>
+<text class="sub" x="48" y="106">Research blueprint. This RPC path is not implemented by the current keeper release.</text>
+<rect x="48" y="170" width="250" height="130" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="68" y="206">Read-only client</text>
+<text class="body" x="68" y="239">Bounded method surface</text>
+<text class="body" x="68" y="265">Explicit block context</text>
+<rect x="365" y="170" width="300" height="130" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="385" y="206">Context + coalescing</text>
+<text class="body" x="385" y="239">Exact request identity</text>
+<text class="body" x="385" y="265">Freshness / reorg rules</text>
+<rect x="730" y="170" width="330" height="130" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="750" y="206">Sparse edge routing</text>
+<text class="body" x="750" y="239">Peer selection + fallback</text>
+<text class="body" x="750" y="265">Matched nonbiological baseline</text>
+<rect x="1125" y="170" width="267" height="130" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="1145" y="206">BSC origin RPC</text>
+<text class="body" x="1145" y="239">Unchanged PoSA / EVM</text>
+<text class="body" x="1145" y="265">Measured upstream work</text>
+<rect x="48" y="465" width="300" height="140" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="68" y="501">Gate 1 · Local pass</text>
+<text class="body" x="68" y="534">Deterministic continuity</text>
+<text class="body" x="68" y="560">Peer recovery evidence</text>
+<rect x="398" y="465" width="300" height="140" rx="12" fill="#11181f" stroke="#e6b526" stroke-width="1.7"/>
+<text class="label" x="418" y="501">Gate 2 · Local pass</text>
+<text class="body" x="418" y="534">Witness-quorum registry</text>
+<text class="body" x="418" y="560">Local EVM receipts</text>
+<rect x="748" y="465" width="300" height="140" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="768" y="501">Gate 3 · Pending</text>
+<text class="body" x="768" y="534">Role-correct RPC prototype</text>
+<text class="body" x="768" y="560">Adversarial correctness tests</text>
+<rect x="1098" y="465" width="294" height="140" rx="12" fill="#11181f" stroke="#768492" stroke-width="1.7" stroke-dasharray="8 6"/>
+<text class="label" x="1118" y="501">Gate 4 · Pending</text>
+<text class="body" x="1118" y="534">Independent WAN tests</text>
+<text class="body" x="1118" y="560">Full cost / resource accounting</text>
+<polyline class="edge" points="298,235 360,235"/>
+<polyline class="edge" points="665,235 725,235"/>
+<polyline class="edge" points="1060,235 1120,235"/>
+<polyline class="edge" points="348,535 393,535"/>
+<polyline class="edge" points="698,535 743,535"/>
+<polyline class="edge" points="1048,535 1093,535"/>
+<text class="note" x="48" y="690">Fewer origin requests do not imply the same percentage reduction in total node costs.</text>
+<text class="note" x="48" y="716">Economic inputs are scenarios until supported by measured workloads and complete accounting.</text>
+</svg>

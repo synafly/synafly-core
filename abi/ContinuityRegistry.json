@@ -1,0 +1,382 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "committee",
+        "type": "address[]",
+        "internalType": "address[]"
+      },
+      {
+        "name": "required",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "DOMAIN",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "commit",
+    "inputs": [
+      {
+        "name": "c",
+        "type": "tuple",
+        "internalType": "struct ContinuityRegistry.Commitment",
+        "components": [
+          {
+            "name": "lineage",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "graph",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "model",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "checkpoint",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "parent",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "sequence",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "tick",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ]
+      },
+      {
+        "name": "signatures",
+        "type": "bytes[]",
+        "internalType": "bytes[]"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "heads",
+    "inputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "graph",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "model",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "checkpoint",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sequence",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "tick",
+        "type": "uint64",
+        "internalType": "uint64"
+      },
+      {
+        "name": "exists",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "isWitness",
+    "inputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bool",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "messageHash",
+    "inputs": [
+      {
+        "name": "c",
+        "type": "tuple",
+        "internalType": "struct ContinuityRegistry.Commitment",
+        "components": [
+          {
+            "name": "lineage",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "graph",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "model",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "checkpoint",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "parent",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "sequence",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "tick",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "signingDigest",
+    "inputs": [
+      {
+        "name": "c",
+        "type": "tuple",
+        "internalType": "struct ContinuityRegistry.Commitment",
+        "components": [
+          {
+            "name": "lineage",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "graph",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "model",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "checkpoint",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "parent",
+            "type": "bytes32",
+            "internalType": "bytes32"
+          },
+          {
+            "name": "sequence",
+            "type": "uint64",
+            "internalType": "uint64"
+          },
+          {
+            "name": "tick",
+            "type": "uint64",
+            "internalType": "uint64"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "threshold",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "witnesses",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "event",
+    "name": "CheckpointCommitted",
+    "inputs": [
+      {
+        "name": "lineage",
+        "type": "bytes32",
+        "indexed": true,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "sequence",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "tick",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      },
+      {
+        "name": "graph",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "model",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "parent",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      },
+      {
+        "name": "checkpoint",
+        "type": "bytes32",
+        "indexed": false,
+        "internalType": "bytes32"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "InsufficientQuorum",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidCommitment",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidCommittee",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidSignature",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ModelChanged",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SignersNotOrdered",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "UnknownWitness",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "WrongParentOrSequence",
+    "inputs": []
+  }
+]
