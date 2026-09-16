@@ -1,0 +1,138 @@
+{
+  "kind": "access_recipes_release_pre_run_source_lock",
+  "created_at": "2026-09-16T21:16:02.815663+00:00",
+  "base_commit": "82dd1c6dd5e092cbf8927fa198d3e0bb6d63e3a1",
+  "planned_matrix": {
+    "training_traces": 128,
+    "heldout_calls": 256,
+    "methods": 5,
+    "retrieval_cases": 1280,
+    "extra_dynamic_jump_trace": 1
+  },
+  "projection": {
+    "seed": 317,
+    "inputs": 21,
+    "rows": 256,
+    "inputs_per_row": 6,
+    "winners": 16,
+    "max_candidates": 8
+  },
+  "legacy_lineage": {
+    "source_sha256": {
+      "synafly_lab/access_recipes.py": "169175d82727f20d9691b07dd8fd363f79715d84ee17c7a2cc32242911b24913",
+      "synafly_lab/fly_recipe_index.py": "e738d6bdd0fc4d7610b429078dd5190af2cdc1bdebc73331a1bf07fae005eec7",
+      "synafly_lab/recipe_fixtures.py": "26a3d559ed7df80e91b7dde3038587905d5010aa722b28eb4f6ab910bfd93225",
+      "synafly_lab/recipe_node.py": "6a263ab125395be360b0534eac5da5c44eaf7cd44a9a31eb139360bed1058535",
+      "tests/test_access_recipes.py": "952f95ff49c5441d4fd57db51490e9a5bf587c06998e2946cb2125abef3b40fd",
+      "scripts/demo_access_recipes.py": "1867b7e222f0d5dd1e6e8e9ff886eaca4963cfc62197b579f22cfacc3a9189c8",
+      "scripts/verify_access_recipes.py": "f48d62750659bf0a64cdc72e53d7422a808c742f2b15e601daa6c2ac3531f203",
+      "docs/evm-access-recipes-design.md": "9a891d2159d1c3e03ea01c6d06d26c4bdc9dc6d7b7f8876bd591f8072a7ddaa7",
+      "data/evm-access-recipes.json": "613c6ed9e54420212663a5e55c4b34c55058db9ae4a5e2dcaf6c00c003830fcf",
+      "results/evm-access-recipes.json": "a687420d80788f55ec3731f5a106a8fc176446f5fbf713e5d0c76b75a26964ca"
+    },
+    "summary": {
+      "guarded-union": {
+        "hits": 160,
+        "misses": 128,
+        "extra_slots": 0,
+        "predicted_slots": 160,
+        "actual_slots": 288,
+        "exact_footprint": 160,
+        "abstained": 96,
+        "candidates": 256
+      },
+      "exact-descriptor": {
+        "hits": 0,
+        "misses": 288,
+        "extra_slots": 0,
+        "predicted_slots": 0,
+        "actual_slots": 288,
+        "exact_footprint": 0,
+        "abstained": 256,
+        "candidates": 0
+      },
+      "nearest": {
+        "hits": 160,
+        "misses": 128,
+        "extra_slots": 0,
+        "predicted_slots": 160,
+        "actual_slots": 288,
+        "exact_footprint": 160,
+        "abstained": 96,
+        "candidates": 240
+      },
+      "flyhash": {
+        "hits": 160,
+        "misses": 128,
+        "extra_slots": 0,
+        "predicted_slots": 160,
+        "actual_slots": 288,
+        "exact_footprint": 160,
+        "abstained": 96,
+        "candidates": 238
+      },
+      "stale-slots": {
+        "hits": 0,
+        "misses": 288,
+        "extra_slots": 160,
+        "predicted_slots": 160,
+        "actual_slots": 288,
+        "exact_footprint": 0,
+        "abstained": 96,
+        "candidates": 160
+      }
+    },
+    "catalog_sha256": "327ae40812694cc74964084d2ed3dcb70402199f699f52871da0df1e249c0b5b",
+    "predictions_sha256": "79a3143b9ec9586dce77c63d9e16b1e450e99ef5963160d68e55fa00a110e0bc"
+  },
+  "implementation_sha256": {
+    "scripts/demo_access_recipes.py": "f1195574e2965f09ae885cefbd4f8f778c94452f618b77f01163081febbc280c",
+    "synafly_lab/access_recipes.py": "169175d82727f20d9691b07dd8fd363f79715d84ee17c7a2cc32242911b24913",
+    "synafly_lab/fly_recipe_index.py": "e738d6bdd0fc4d7610b429078dd5190af2cdc1bdebc73331a1bf07fae005eec7",
+    "synafly_lab/recipe_fixtures.py": "26a3d559ed7df80e91b7dde3038587905d5010aa722b28eb4f6ab910bfd93225",
+    "synafly_lab/recipe_node.py": "4fe9b2ce796cc77166107fd46abd78302617604e92f859bd8487e52151106ced",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "scripts/verify_access_recipes.py": "3bc9e7d1f6e630d63b44539d8f809c34ce2002c2fc83badc0a555695c3d5dc53",
+    "docs/evm-access-recipes-design.md": "d955ceed678e67734b85ae2284f8e6f876b441ff356a2d4def28f2ce140981f0",
+    "tests/test_access_recipes.py": "f3c8971afc1a3f6a993aa252ca0b0db3d5ed05d06fabe6a5cf617e966ce96238"
+  },
+  "boundaries": "Owned zero-account Anvil; local preparation only; sealed read-only evaluation. Offline CI uses recorded HTTP/Keccak fixtures; cast recomputation and actual EVM reproduction are separate checks.",
+  "verification": {
+    "completed_at": "2026-09-16T21:25:19.268555+00:00",
+    "python_suites": [
+      {
+        "python": "3.12.13",
+        "passed": 102,
+        "failed": 0,
+        "log_sha256": "bcb961de63939eb1ac852f6b9b1afa6ffa102122c1e3b42f26cee864a0af7b0b"
+      },
+      {
+        "python": "3.14.5",
+        "passed": 102,
+        "failed": 0,
+        "log_sha256": "e65211ba56fca5c28fc7ee0d0e29a8029a0204fa5c49ab8ea95de95df43af945"
+      }
+    ],
+    "foundry": {
+      "passed": 10,
+      "failed": 0,
+      "fuzz_runs": 128,
+      "log_sha256": "fd6d2af26d76094f2d95cb29dc91d0aeaaa0113479de6e3e35b49a4b686850f7"
+    },
+    "distinct_suite_tests": 112,
+    "offline_tests_need_anvil_or_cast": false,
+    "real_local_evm_capture": "completed",
+    "independent_cast_vectors_checked": 305,
+    "anvil_keccak_crosscheck_vectors": 9,
+    "legacy_numeric_results_preserved": true,
+    "legacy_training_and_reference_records_preserved": true,
+    "artifact_sha256": {
+      "results/evm-access-recipes.json": "a96c1cb101643e1ef2df82bad9a1ce59870deb90250f27c271a35cf143e31efa",
+      "data/evm-access-recipes.json": "f394bd584f2b4bfd8a8ae8ac4d184ac9ed407415bad62f2d3dc03f53c4a839dc",
+      "docs/evm-access-recipes-results.md": "64e90d53cd33c761655a901db88315d5057747a11e3fa3c1a182b778d560487b"
+    },
+    "public_rpc_calls": 0,
+    "public_transactions": 0,
+    "remote_ci_claimed_by_this_local_record": false
+  }
+}
