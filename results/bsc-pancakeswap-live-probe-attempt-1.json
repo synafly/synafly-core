@@ -1,0 +1,100 @@
+{
+  "schema": "synafly.pancakeswap-live-probe.v1",
+  "status": "failed",
+  "started_at_utc": "2026-09-16T15:53:35.631819+00:00",
+  "upstream": "https://bsc-dataseed.bnbchain.org",
+  "chain_id": 56,
+  "genesis_hash": "0x0d21840abff46b96c84b2ac9e10e4f5cdaeb5693cb665db62a2f3b02d2d57b5b",
+  "pair": "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae",
+  "storage_slot": "0x8",
+  "blockchain_transactions_sent": 0,
+  "rpc_attempts": [
+    {
+      "sequence": 1,
+      "phase": "bootstrap",
+      "method": "eth_chainId",
+      "params": [],
+      "outcome": "returned",
+      "result_sha256": "355605cd47f89c9c5c1dc33ffcd2ec8c6a566dda107fe2a23d5b0f5901189de3"
+    },
+    {
+      "sequence": 2,
+      "phase": "bootstrap",
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "0x0",
+        false
+      ],
+      "outcome": "returned",
+      "result_sha256": "bca39300a9dd430cedc3ff142a7d45876dc538d8a017997c1e07d6ab281a4efc"
+    },
+    {
+      "sequence": 3,
+      "phase": "capture-latest",
+      "method": "eth_getBlockByNumber",
+      "params": [
+        "latest",
+        false
+      ],
+      "outcome": "returned",
+      "result_sha256": "d07a56a8332bfc04707ef6bcd0b0d1fc9b8a85593badf4a5e44233eaf735ef7b"
+    },
+    {
+      "sequence": 4,
+      "phase": "pool-identity",
+      "method": "eth_getCode",
+      "params": [
+        "0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae",
+        {
+          "blockHash": "0xd88112dd331b6668988c61ac5b003aa6314c5b5f4a73de64f3a5f1d2711edc46",
+          "requireCanonical": false
+        }
+      ],
+      "outcome": "error",
+      "error_code": -32002
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/probe_pancakeswap_live.py": "4fff8aea66d0325ccf3966ce546c5345d742fd595e9a58a84fdcea9d8336e4a9",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171"
+  },
+  "workload": {
+    "clients_per_burst": 4,
+    "rounds": 2,
+    "timeout_seconds": 8,
+    "maximum_rpc_attempts": 30,
+    "cache_entries": 0,
+    "injected_origin_delay_seconds": 0,
+    "retries": 0,
+    "allowed_rpc_methods": [
+      "eth_chainId",
+      "eth_getBlockByNumber",
+      "eth_getCode",
+      "eth_getStorageAt"
+    ]
+  },
+  "queried_block": {
+    "number": "0x7495efb",
+    "number_decimal": 122248955,
+    "hash": "0xd88112dd331b6668988c61ac5b003aa6314c5b5f4a73de64f3a5f1d2711edc46",
+    "timestamp": 1789574022,
+    "selector": {
+      "blockHash": "0xd88112dd331b6668988c61ac5b003aa6314c5b5f4a73de64f3a5f1d2711edc46",
+      "requireCanonical": false
+    },
+    "captured_at_utc": "2026-09-16T15:53:42.946265+00:00"
+  },
+  "failure": "Upstream deadline exceeded",
+  "error_code": -32002,
+  "phase": "pool-identity",
+  "finished_at_utc": "2026-09-16T15:53:50.957609+00:00",
+  "rpc_attempts_total": 4,
+  "origin_metrics": {
+    "rpc_calls": 4,
+    "metadata_calls": 3,
+    "state_reads": 1,
+    "request_json_bytes": 431,
+    "response_json_bytes": 11081
+  }
+}

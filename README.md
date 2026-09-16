@@ -127,6 +127,15 @@ matching values. All 27 public RPC calls, including bootstrap/block capture, are
 accounted for. It is a low-volume compatibility observation, not user telemetry,
 a consensus proof or a deployed BSSR network.
 
+The separate [PancakeSwap mainnet probe](docs/pancakeswap-live-probe.md) reads
+the USDT/WBNB pair's packed reserves at one captured block hash with **caching
+disabled**. In the recorded two four-client bursts per mode, all **16/16** replies
+matched: direct mode made **8** upstream reserve reads; single-flight made **2**.
+The successful run used **24 total public RPC calls**, including identity checks
+and negative controls. A prior four-call timeout is retained, not counted as
+successful offloading. This establishes sampled read coalescing, not pool trading,
+node replacement, biological advantage or monetary savings.
+
 The [graph experiment](results/routing-benchmark.json) also preserves a negative
 result. With no failed nodes, the observed sample found cache shards in **668 of
 2,560 lookups**, versus **723–822** for eight degree-matched rewired controls and
@@ -167,6 +176,16 @@ The public compatibility probe is **opt-in** and is not run by CI:
 ```sh
 python3 scripts/probe_bsc_rpc.py --upstream https://bsc-dataseed.bnbchain.org
 ```
+
+The new reserve probe is also opt-in; the official endpoint and pair are fixed:
+
+```sh
+python3 scripts/probe_pancakeswap_live.py --timeout 10 --out .cache/pancakeswap-rerun.json
+```
+
+Omitting `--out` writes `results/bsc-pancakeswap-live-probe.json`. Preserve earlier
+attempts before rerunning; a failed or interrupted run must not masquerade as an
+old success. [Bounds, interpretation and failure behavior](docs/pancakeswap-live-probe.md).
 
 Public providers can time out, reject historical reads or prune state. Failed runs
 produce a failure report instead of leaving an older success looking current.
