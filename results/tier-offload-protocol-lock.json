@@ -1,0 +1,22 @@
+{
+  "kind": "pre_run_source_lock_for_standalone_whitelist_release",
+  "created_at": "2026-09-16T07:46:11.422713+00:00",
+  "clients": 1000,
+  "origin_emulated_delay_ms": 20,
+  "groups": 4,
+  "dispatch_workers": 16,
+  "request_group_assignment": "round robin; every group sees every hot key",
+  "scope": "Owned loopback EVM only; no public load, paid infrastructure or deployment. Minimal fixture replaces unpublished training-module dependency; no cache semantics changed.",
+  "implementation_sha256": {
+    "scripts/benchmark_tier_offload.py": "3cb1153b976ea141b94699d68a9bc654fad69fe02106a2c88a5b145116b012fe",
+    "synafly_lab/async_edge_ingress.py": "a95d56df9eda445d70b29f906cc987c0cc0bf37623608da86089318e164a44ea",
+    "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171",
+    "synafly_lab/edge_server.py": "d57e04e6618119cbd5c8454a8fac2381e1b1f5f05a18aa66e56c40582fecd56d",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "synafly_lab/tier_cost.py": "095d7cba46d75f560b6521844a4b5e7014efa636f4d19d594ec796eed88a8a97",
+    "docs/tiered-load-test-design.md": "620ee19bfec3ad416a5fc712e85aa01bfa6e24ebab40fd29dc001e62a5e5952a",
+    "scripts/verify_tier_offload.py": "a166e8bed0ab33a3cb893168c44b7795d0cf100258e19c1e3a23171cd1ccbf55",
+    "scripts/reevaluate_tier_cost.py": "77ea17d8a8760ba452e6cb30137b2e9a0edaa0a19c9eef3b2d0b712b84266162",
+    "tests/test_tier_offload.py": "a83fc5cee708c9350f0878b9cc50d3660d59c1731769a505b7d000e804a51016"
+  }
+}

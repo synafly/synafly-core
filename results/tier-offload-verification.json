@@ -1,0 +1,77 @@
+{
+  "kind": "standalone_release_local_verification_not_remote_ci_or_independent_audit",
+  "recorded_at": "2026-09-16T07:50:57.825131+00:00",
+  "base_commit": "f7d4e4011b56e9b89f03da27ffaf01a2f79fb610",
+  "change_paths": [
+    "synafly_lab/tier_cost.py",
+    "synafly_lab/async_edge_ingress.py",
+    "scripts/benchmark_tier_offload.py",
+    "scripts/verify_tier_offload.py",
+    "scripts/reevaluate_tier_cost.py",
+    "tests/test_tier_offload.py",
+    "results/tier-offload-1000.json",
+    "results/tiered-cost-reevaluation.json",
+    "results/tier-offload-verification.json",
+    "results/tier-offload-protocol-lock.json",
+    "docs/tiered-load-test-design.md",
+    "docs/tiered-offload-results.md"
+  ],
+  "python_suites": [
+    {
+      "python": "3.12.13",
+      "tests_passed": 70,
+      "tests_failed": 0,
+      "log_sha256": "1e409e2c55898193c243e554dfe2c9a1b78d464fc17c042a741e16700bbdc42c"
+    },
+    {
+      "python": "3.14.5",
+      "tests_passed": 70,
+      "tests_failed": 0,
+      "log_sha256": "3ae5bdbc7d9f54b5af538c9fd63b79121d77134fdc500398bbb1a05acf8f2c98"
+    }
+  ],
+  "load_audit": {
+    "fully_served_bursts_verified": 12,
+    "correct_responses": 12000,
+    "actual_peak_admitted_per_normal_burst": 1000,
+    "overload_rejections_excluded": 936,
+    "scope": "Saved load evidence and arithmetic audit, not independent hardware cost measurement."
+  },
+  "cost_counter_rows_reweighted": 640,
+  "cost_snapshot_replay_scope": "Complete exported observations and arithmetic, not original simulator execution.",
+  "existing_ci_reproductions": {
+    "continuity_matches_uninterrupted": true,
+    "history_checkpoints_verified": 10,
+    "ablation_reproduced": true,
+    "http_and_routing_source_bindings": "matched",
+    "http_and_routing_accounting": "matched",
+    "offline_reports_compared": 2
+  },
+  "unchanged_solidity_regression": {
+    "command": "forge test --offline -v",
+    "passed": 10,
+    "failed": 0,
+    "fuzz_runs": 128
+  },
+  "public_network_load_generated": false,
+  "public_transactions": 0,
+  "production_changed": false,
+  "artifact_sha256": {
+    "synafly_lab/tier_cost.py": "095d7cba46d75f560b6521844a4b5e7014efa636f4d19d594ec796eed88a8a97",
+    "synafly_lab/async_edge_ingress.py": "a95d56df9eda445d70b29f906cc987c0cc0bf37623608da86089318e164a44ea",
+    "scripts/benchmark_tier_offload.py": "3cb1153b976ea141b94699d68a9bc654fad69fe02106a2c88a5b145116b012fe",
+    "scripts/verify_tier_offload.py": "a166e8bed0ab33a3cb893168c44b7795d0cf100258e19c1e3a23171cd1ccbf55",
+    "scripts/reevaluate_tier_cost.py": "77ea17d8a8760ba452e6cb30137b2e9a0edaa0a19c9eef3b2d0b712b84266162",
+    "tests/test_tier_offload.py": "a83fc5cee708c9350f0878b9cc50d3660d59c1731769a505b7d000e804a51016",
+    "results/tier-offload-1000.json": "13b520ce0935598b1dc0b72f08cd1c57c73471b00347aaf7b5359796f867a963",
+    "results/tiered-cost-reevaluation.json": "d42f2d078174037f978cd2417928718432c5469493135597f1337753efb58a8e",
+    "results/tier-offload-protocol-lock.json": "2471ff30c3b6e046f5cda7c4486d9be5a0939a18204de9a33425d1af39533246",
+    "docs/tiered-load-test-design.md": "620ee19bfec3ad416a5fc712e85aa01bfa6e24ebab40fd29dc001e62a5e5952a",
+    "docs/tiered-offload-results.md": "972eb4e26ede0cb00dd29c6af0d8090477485000dd0d80ec64e8857402bb07de"
+  },
+  "inherited_source_sha256": {
+    "synafly_lab/edge.py": "abb881d37af905f58684dd9b7dd1cf216bd65498175acf85ea1dd16e265cb171",
+    "synafly_lab/edge_server.py": "d57e04e6618119cbd5c8454a8fac2381e1b1f5f05a18aa66e56c40582fecd56d",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc"
+  }
+}
