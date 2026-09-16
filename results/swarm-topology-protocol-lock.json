@@ -1,0 +1,82 @@
+{
+  "kind": "pre_run_protocol_and_source_lock",
+  "created_at": "2026-09-16T12:36:40.990465+00:00",
+  "input_sha256": "2817fed9bc7b900c15b8c286da8832afaa4a10ef2b166a3056b6d67acd84187f",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "original_replay_rows": 10,
+  "matched_trials_planned": 105,
+  "negative_control_trials_planned": 14,
+  "implementation_sha256": {
+    "scripts/benchmark_swarm_topology.py": "da185e9c6cab2bc3927c3c289dfd3158be3cbea30ec365bff56b717595cdc9fd",
+    "synafly_lab/tier_cost.py": "095d7cba46d75f560b6521844a4b5e7014efa636f4d19d594ec796eed88a8a97",
+    "synafly_lab/topology.py": "bb47b88d494657f9f17d9f27537bcf34312f001d3d78b92adaee25250a8b0c2b",
+    "synafly_lab/model.py": "b22572678afd42370ea84403424697b1c80cf3241715a285ef9cd37f75675732",
+    "synafly_lab/canonical.py": "f91c49b9c69b91a6163f20baeddea7eda457b79c5e833522b25aab417f59ab92",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "docs/swarm-topology-design.md": "f838819aa0dd89d1f1d370324207d9857a70010aec9bb6edb7a08565e2388344",
+    "tests/test_swarm_topology.py": "d986bc9c14a4f76ee82f3b1ccef3d9aad4344f71f169d79a7b40f7c888c1b563"
+  },
+  "scope": "Serial58-role simulation; static5/58 and6/58 failure controls; no physical NVMe or public RPC experiment.",
+  "revision_note": "Make provenance edge arrays JSON-native for exact Python-to-JSON replay; no workload, routing, seed or accounting change.",
+  "prior_source_snapshot": {
+    "kind": "pre_run_protocol_and_source_lock",
+    "created_at": "2026-09-16T12:34:56.573527+00:00",
+    "input_sha256": "2817fed9bc7b900c15b8c286da8832afaa4a10ef2b166a3056b6d67acd84187f",
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "original_replay_rows": 10,
+    "matched_trials_planned": 105,
+    "negative_control_trials_planned": 14,
+    "implementation_sha256": {
+      "scripts/benchmark_swarm_topology.py": "8a7cf9c7ff0d179960521beba3ec2bc2d946bfd4a10fd8b02d6bb9302a69914b",
+      "synafly_lab/tier_cost.py": "095d7cba46d75f560b6521844a4b5e7014efa636f4d19d594ec796eed88a8a97",
+      "synafly_lab/topology.py": "bb47b88d494657f9f17d9f27537bcf34312f001d3d78b92adaee25250a8b0c2b",
+      "synafly_lab/model.py": "b22572678afd42370ea84403424697b1c80cf3241715a285ef9cd37f75675732",
+      "synafly_lab/canonical.py": "f91c49b9c69b91a6163f20baeddea7eda457b79c5e833522b25aab417f59ab92",
+      "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+      "docs/swarm-topology-design.md": "f838819aa0dd89d1f1d370324207d9857a70010aec9bb6edb7a08565e2388344",
+      "tests/test_swarm_topology.py": "d986bc9c14a4f76ee82f3b1ccef3d9aad4344f71f169d79a7b40f7c888c1b563"
+    },
+    "scope": "Serial58-role simulation; static5/58 and6/58 failure controls; no physical NVMe or public RPC experiment."
+  },
+  "verification": {
+    "completed_at": "2026-09-16T12:43:20.598081+00:00",
+    "base_commit": "dbf00d1ad234f1850b630c17b01f05aa9be9a6d3",
+    "python_suites": [
+      {
+        "python": "3.12.13",
+        "passed": 83,
+        "failed": 0,
+        "log_sha256": "cd360dcc5ca9c4d42cf1686189482749071ab4632bf17b0760909ff4e89a595b"
+      },
+      {
+        "python": "3.14.5",
+        "passed": 83,
+        "failed": 0,
+        "log_sha256": "b8905fa71f623670bad8a4517a04690f25b6625f66fb98b006796e1ed220c03c"
+      }
+    ],
+    "cross_python_report_bytes_identical": true,
+    "solidity_suite": {
+      "passed": 10,
+      "failed": 0,
+      "fuzz_runs": 128,
+      "log_sha256": "8f0f59662535ad7f8a018ef2cd63383bc40726f765ee3b3ec02ccc3988dfb35b"
+    },
+    "report_sha256": "c3401c1fb233153ae71da221be19e57aa0475490afcc982feb6163b81b4f3884",
+    "results_document_sha256": "29a6d63cf9506c24a3e17f7d7076f72ef4f2f14980e143925899e6dbd8054000",
+    "public_rpc_used": false,
+    "remote_ci_claimed_by_this_local_record": false
+  }
+}
