@@ -1,0 +1,8 @@
+**
+!Dockerfile
+!synafly_lab/
+!synafly_lab/*.py
+!scripts/
+!scripts/run_edge_daemon.py
+!data/
+!data/mesh-topology.json

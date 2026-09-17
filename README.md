@@ -15,9 +15,9 @@ read-only RPC edge, a real HTTP/process ablation, a public BSC read-compatibilit
 probe, and graph lookup experiments against matched controls.
 
 **BSSR (Bio-Sparse Synaptic Relay)** remains the broader research program.
-The RPC cache is implemented; biological peer routing is a separate simulation,
-not wired into the gateway. The measured request reduction comes from ordinary
-caching/coalescing, **not a demonstrated biological advantage**.
+The original graph benchmarks are simulations. The new experimental daemon also
+wires the PR #5 role adjacency into a configured, trusted-peer cache mesh.
+Measured cache/coalescing gains are **not a demonstrated biological advantage**.
 [Results and limitations](docs/release-v0.2.md) · [Architecture decision](docs/edge-design.md).
 
 - **Website / separate browser experience:** [synafly.fyi](https://synafly.fyi/)
@@ -25,6 +25,26 @@ caching/coalescing, **not a demonstrated biological advantage**.
 
 Public `ContinuityRegistry` deployments remain explicitly marked
 [not deployed](deployments/bsc-testnet.json).
+
+## Experimental Synaptic Edge Daemon & Mesh
+
+```sh
+python3 scripts/run_edge_daemon.py --port 8545
+```
+
+Python 3.12+, standard library only. Six read-only JSON-RPC methods, bounded async
+admission and single-flight caching, optional FlyHash slot prefetch, an opt-in
+block sampler, directed authenticated peer-cache queries and local accounting
+receipts. No signing, broadcast, public registry deployment or token rewards.
+
+[Run locally / on a VPS](docs/edge-daemon-design.md) ·
+[Measured results and controls](docs/edge-daemon-results.md) ·
+[Offline three-process reproduction](scripts/verify_edge_daemon.py)
+
+Peer values remain operator-trusted; this is not permissionless verified state.
+Recipe catalogs must match the runtime code and network. The supplied training
+export is synthetic, not a trained PancakeSwap predictor. Container packaging is
+provided but has not been built in this development environment.
 
 ## The vision: continuity beyond one host
 

@@ -17,7 +17,7 @@
 | A bounded read-only RPC edge is implemented | Implemented and locally tested | synafly_lab/edge_server.py; four methods; pinned noncanonical-required cache; dynamic/canonical-required bypass |
 | Cache/coalescing reduces origin calls in the fixture | Measured for the stated synthetic workload | results/edge-http.json: identical outcomes; 40/25/33/18 origin calls including bootstrap; not biological or economic savings |
 | Public BSC read compatibility was observed | Bounded read-only observation | results/bsc-read-probe.json: one provider, one block, 27 calls, no transactions; provider failures also recorded |
-| Biological routing is integrated into the RPC edge | Not implemented | Separate graph simulation; gateway uses ordinary caching/coalescing only |
+| PR #5 role adjacency is integrated into real peer-cache lookup | Implemented, locally tested | PR #8 directed one-hop HTTP mesh; configured trusted peers; no full-brain simulation, WAN deployment or superiority claim |
 | The observed graph beats conventional lookup | Not established | results/routing-benchmark.json preserves fewer hits versus all eight rewired controls in the zero-failure fixture; contact-cost trade-offs reported |
 | BSC validators have been replaced / $20M saved | Not implemented or demonstrated | No full-node, PoSA or fleet-cost benchmark |
 | The entire live website is open source | Not claimed | This is an independent partial research release |
@@ -34,3 +34,15 @@ Appropriate release wording after publication:
 Do not replace these distinctions with an unqualified "immortal on BSC is already
 live" statement. Hypotheses may be published before validation, but must remain
 identifiable as hypotheses.
+
+## PR #8 additions
+
+| Claim | Status | Evidence / boundary |
+|---|---|---|
+| Independent daemons exchange cached state over HTTP | Tested on loopback | `results/edge-daemon-verification.json`; two simultaneous mesh processes; neighbor exit falls back to origin |
+| FlyHash predictions fill the edge slot cache | Tested on synthetic bytecode | Same-block code hash checked; unknown namespaces abstain; original `eth_call` still forwarded |
+| Observed block transactions can trigger prewarming | Tested with owned wire origin | Before the first client slot read; not a mempool feed, future-state oracle or deployed PancakeSwap catalog |
+| Receipts prove real economic savings | Not established | Unsigned local accounting chain, registry-shaped fields only; no witnesses or broadcast |
+| Untrusted peer data is consensus-verified | Not implemented | Envelope validation and authentication do not prove storage truth |
+| All 5,000 clients always succeed | Not claimed | Explicit capacity and negative controls; all failures remain in stress reports |
+| Container runs in production | Not verified | Dockerfile supplied; Docker unavailable in development environment |

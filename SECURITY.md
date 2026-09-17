@@ -7,7 +7,7 @@ There is no token, payout, buyback or key-management functionality.
   operator deployment behind TLS, access controls and external rate limits.
 - Admin bearer tokens belong in local environment variables, never in Git,
   command examples, screenshots or bug reports.
-- Peers are explicit, bounded and independently replay-verified. They can withhold
+- State-continuity keeper peers are explicit, bounded and independently replay-verified. They can withhold
   data, delay responses or propose different valid input histories. Forks fail
   closed instead of silently changing the selected history.
 - Full data availability is an assumption: hashes and on-chain events cannot
@@ -50,3 +50,30 @@ There is no token, payout, buyback or key-management functionality.
 Before external publication, review the exact files and remove all runtime stores,
 credentials and local logs. Follow the release checklist; do not treat CI green as
 a security audit or a claim of biological/financial correctness.
+
+## Experimental Synaptic Edge Daemon / Mesh (PR #8)
+
+The older v0.2 server above is unchanged. `scripts/run_edge_daemon.py` is a separate
+six-method profile with opt-in `eth_call`, bounded async ingress, exact CORS,
+remote-bind token requirements and an optional block sampler. It has **not** had
+an external security audit, public hostile-WAN trial or long-duration soak test.
+
+Mesh peers are NOT replay-verified keeper peers. They share an operator-managed
+bearer credential and return pinned cache values; well-formed dishonest data
+cannot be detected without state proofs. Do not accept arbitrary public peers or
+call this permissionless consensus. RPC authentication does not replace TLS,
+firewalls, per-client quotas or upstream execution-gas caps. Default loopback
+binding protects against accidental remote exposure, not malicious local users.
+
+Predictions never answer `eth_call`; reviewed catalogs are advisory and
+network/code-hash scoped. Prefetch can add origin traffic and compete for cache
+space or in-flight slots. It is bounded and can be disabled. No daemon method
+retrains from untrusted transactions, traces code, accepts a dynamic upstream,
+or grants wallet permissions.
+
+Offload receipts are unsigned operator accounting. Hash chains expose alteration
+relative to a retained trusted head, not fabrication, independent execution,
+availability or economic entitlement. They are not registry witness certificates.
+Runtime reports may reveal query targets and should remain private unless reviewed.
+
+See [deployment and resource boundaries](docs/edge-daemon-design.md).
