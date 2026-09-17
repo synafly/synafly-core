@@ -1,0 +1,8 @@
+{
+  "schema": "synafly.quorum-counterfactual.v1",
+  "mode": "actual-owned-anvil-rerun",
+  "expected_error_intentionally_changed_from": "SignersNotOrdered",
+  "expected_error_intentionally_changed_to": "UnknownWitness",
+  "harness_failed_as_required": true,
+  "public_transactions_sent": 0
+}
