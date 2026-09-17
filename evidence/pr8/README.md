@@ -23,14 +23,8 @@ Measured cache/coalescing gains are **not a demonstrated biological advantage**.
 - **Website / separate browser experience:** [synafly.fyi](https://synafly.fyi/)
 - **Scope:** a partial release of research components, not a claim that the whole live product is open source.
 
-`ContinuityRegistry` is an infrastructure state log, **not a token**.
-[Mainnet status](deployments/bsc-mainnet.json) · [Testnet status](deployments/bsc-testnet.json).
-The separate ecosystem token is `0x259dd071f40d96e61f2bcc663bfac6898d957777`;
-never treat its address as the registry or send it deployment/commit calldata.
-
-Mainnet deployment tooling is prepared for a **single-operator permissioned log**.
-No mainnet deployment is claimed by the test fixture. See the [operator runbook](docs/bsc-mainnet-log.md)
-and the explicitly [non-normative token RFC](docs/token-economic-rfc.md).
+Public `ContinuityRegistry` deployments remain explicitly marked
+[not deployed](deployments/bsc-testnet.json).
 
 ## Experimental Synaptic Edge Daemon & Mesh
 

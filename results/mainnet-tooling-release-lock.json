@@ -1,0 +1,47 @@
+{
+  "actual_mainnet_deployed": false,
+  "base_commit": "149ddde527640e611bb6844a083cc50217829583",
+  "contract_type": "INFRASTRUCTURE_CONTINUITY_LOG",
+  "governance": "single-operator permissioned log; not decentralized multi-party consensus",
+  "mutable_operational_files": [
+    "deployments/bsc-mainnet.json",
+    "docs/claims.md"
+  ],
+  "notice": "THIS IS AN APPEND-ONLY INFRASTRUCTURE STATE LOG, NOT A TOKEN. CANNOT BE TRADED OR SWAPPED.",
+  "official_token_ca": "0x259dd071f40d96e61f2bcc663bfac6898d957777",
+  "schema": "synafly.mainnet-tooling-lock.v1",
+  "sha256": {
+    "README.md": "6582510d2130843decfea6901c310b1049f71d79fafd14a11c34ba177aca2b31",
+    "contracts/ContinuityRegistry.sol": "f89ea3ccc5b576ff454c775d57f9c7ca0ccdd8c9b45c3867a935274c97045113",
+    "docs/bsc-mainnet-log.md": "8539cbc1a57c396962f095ddf2d2275807c25863a2ca3d536b57199c0893401b",
+    "docs/token-economic-rfc.md": "cb0872cd61832695388e25e776a0886df7d523c55484449dd201774dca57cca0",
+    "evidence/README.md": "cbd814d79b5e17b8823bf906d889894b45e455f802d1ba48c588f32bf7122f2c",
+    "evidence/pr8/README.md": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
+    "evidence/pr8/claims.md": "f933ddde96f6e86752d141b6f67e1465d256fed0cbe8fa11c97da77314535de6",
+    "evidence/pr9/relay_offload_commitments.py.txt": "55b89384ccee0f85b6358378665be3f4ccb23772e73f2934ec9bd6d828309f1c",
+    "foundry.toml": "26a025c9009741105cdf0897602d147dc20e8efb907ef73f4330656958bdeed1",
+    "requirements-mainnet-signing.txt": "3cacf8e410fa790acdc343e09e68fc5f38c663b1f0b0d2003347c0c2af8f5e12",
+    "results/edge-daemon-release-lock.json": "061d97b0e86a61e6414b9a5b42e6571596f03a6675959af778be04bf0af8c5ef",
+    "results/mainnet-signer-verification.json": "f3f3ef1a59e470c13d4cdd7ed8034ffedd09891a1e8bbb83fd1fb1f54071c3c0",
+    "results/quorum-pipeline-release-lock.json": "6f4fc1177669f33b67974fdf69ad64b9cb8e12945126210ace37fe2a065036e5",
+    "scripts/deploy_bsc_mainnet.py": "bdee08a80eedacf42c11121c5486d4c4025cf68f8cdfa6d112d84284deeec0a8",
+    "scripts/make_mainnet_fixture.py": "a3e281669b0f4a2e7e0fdeb543bfbaaa116dee8af816b90954a1c7c4ddec0bfe",
+    "scripts/relay_offload_commitments.py": "34e5f9a0f360b8686b9dd85f44f7c812fc388c7bb3ed08e2f8bb5b7d6d7c5b14",
+    "scripts/verify_mainnet_tooling.py": "1b1100ff9bc8b9cb23a386859353968ca8a5a998f28d47c125fef4ebb50c0cb6",
+    "synafly_lab/keccak.py": "f5162e82a73b230c339c7e8820a109e684657961d6fe83b1a06367fe78483b42",
+    "synafly_lab/mainnet_codec.py": "8764a7236ee71063e5c0142b5d18748c864744f4953471c506f70c752eab6bd4",
+    "synafly_lab/mainnet_pipeline.py": "55890e0c54b1b1ec370b350043f6b0056dd4d0f879c3e8f6a2a3b2a8c5d4107f",
+    "synafly_lab/mainnet_plan.py": "927c31a859df12a26a3def46517b93b42ddbf2abb897699961ce6da071579d51",
+    "synafly_lab/mainnet_signer.py": "c1697ab735306c292157d90e5b5bb79299282e48ddac9f81001dd87534933ffa",
+    "synafly_lab/quorum_crypto.py": "e3f5f32904afd7c6440fb319a97083f149880caec2a54c57171ab40fe69eef52",
+    "synafly_lab/quorum_relayer.py": "b61ebfa64b5c38f8691add5d143e7b1f8521bd0c153d82b869cdbc24af2446e0",
+    "synafly_lab/quorum_rpc.py": "50d18ee1eb2a8b7b48cb2e680c84fc5a1863b0df3a83234fbbb8fc6467f73c13",
+    "tests/fixtures/genesis_checkpoint.json": "d15d277f1d809257e9e906894f6961e59527feb703908d9a87294215fd74c4d2",
+    "tests/fixtures/mainnet-build.json": "22b7f120ac8d9350c233e25d14bc00c59398dbf3075c93bc65fa7781d0f3e0f0",
+    "tests/test_bsc_mainnet_pipeline.py": "2490c99c4632f115c5dd53fca45ad4b587a589d9b8887e1172dfcd9cbee891cb"
+  },
+  "tests": {
+    "foundry": 10,
+    "python": 186
+  }
+}

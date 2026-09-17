@@ -19,7 +19,7 @@ def main():
     local=sub.add_parser('local-anvil');local.add_argument('--out',default='.local/quorum-pipeline.json')
     prepare=sub.add_parser('prepare');prepare.add_argument('--receipts',required=True);prepare.add_argument('--registry',required=True)
     prepare.add_argument('--runtime-code-hash',required=True);prepare.add_argument('--committee',nargs='+',required=True)
-    prepare.add_argument('--chain-id',type=int,choices=[56,97],default=97);prepare.add_argument('--threshold',type=int,default=2);prepare.add_argument('--previous');prepare.add_argument('--out',required=True)
+    prepare.add_argument('--chain-id',type=int,choices=[97],default=97);prepare.add_argument('--threshold',type=int,default=2);prepare.add_argument('--previous');prepare.add_argument('--out',required=True)
     collect=sub.add_parser('collect');collect.add_argument('--bundle',required=True);collect.add_argument('--signatures',required=True);collect.add_argument('--previous');collect.add_argument('--out',required=True)
     inspect=sub.add_parser('preflight');inspect.add_argument('--bundle',required=True);inspect.add_argument('--previous');inspect.add_argument('--rpc',required=True);inspect.add_argument('--out',required=True)
     verify=sub.add_parser('verify');verify.add_argument('--bundle',required=True);verify.add_argument('--signatures',required=True);verify.add_argument('--previous');verify.add_argument('--rpc',required=True);verify.add_argument('--tx-hash',required=True);verify.add_argument('--confirmations',type=int,default=3);verify.add_argument('--out',required=True)
@@ -33,7 +33,7 @@ def main():
         result=build_checkpoint(rows,chain_id=args.chain_id,registry=args.registry,committee=sorted(args.committee,key=lambda a:int(a,16)),threshold=args.threshold,runtime_code_hash=args.runtime_code_hash,previous=previous)
     else:
         bundle=load(args.bundle);validate_bundle(bundle,previous)
-        if bundle['chain_id'] not in {56,97}:p.error('Only chain IDs 56 and 97 are supported')
+        if bundle['chain_id']!=97:p.error('This CLI only prepares/verifies chain ID 97; no public mainnet workflow')
         if args.mode=='preflight':result=preflight(ReadRPC(args.rpc),bundle,previous)
         else:
             certificate=aggregate_signatures(bundle,load(args.signatures),previous)

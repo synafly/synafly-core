@@ -1,1 +1,22 @@
-{"network":"bsc-mainnet","chain_id":56,"status":"not_deployed","contract_address":null,"transaction_hash":null}
+{
+  "contract_type": "INFRASTRUCTURE_CONTINUITY_LOG",
+  "official_token_ca": "0x259dd071f40d96e61f2bcc663bfac6898d957777",
+  "notice": "THIS IS AN APPEND-ONLY INFRASTRUCTURE STATE LOG, NOT A TOKEN. CANNOT BE TRADED OR SWAPPED.",
+  "governance": "single-operator permissioned log; not decentralized multi-party consensus",
+  "network": "bsc-mainnet",
+  "chain_id": 56,
+  "status": "not_deployed",
+  "registry_address": null,
+  "contract_address": null,
+  "deploy_tx_hash": null,
+  "transaction_hash": null,
+  "genesis_commit_tx_hash": null,
+  "block_number": null,
+  "committee": [],
+  "threshold": 2,
+  "lineage": null,
+  "merkle_root": null,
+  "bscscan_verification_url": null,
+  "bscscan_verification_status": "not_requested",
+  "reason": "Tooling prepared; operator has not broadcast and confirmed the mainnet deployment."
+}

@@ -10,7 +10,7 @@
 | Keepers are geographically/administratively decentralized | Not established | All test processes share one host/operator; deploy independently to test this |
 | Registry verifies a distinct witness quorum | Tested locally | Solidity tests, exact revert trace check and local Anvil commit receipts |
 | Registry proves neuronal correctness on-chain | Not claimed | Contract checks attestations, not execution; dishonest quorum remains a risk |
-| BSC public-chain checkpoint exists | Not deployed | Mainnet tooling is prepared; no confirmed mainnet checkpoint is recorded. See deployments/bsc-mainnet.json. |
+| BSC public-chain checkpoint exists | Not deployed | deployments/bsc-testnet.json and bsc-mainnet.json remain explicitly empty |
 | On-chain hashes guarantee perpetual recovery | False without retention assumptions | Keepers must preserve bytes; hashes alone cannot restore unavailable data |
 | Full fly brain or consciousness has been uploaded | Not implemented or claimed | Small positive-weight toy model; no fitted physiology, learning or embodied control |
 | BSC node roles can be offloaded efficiently | Hypothesis | docs/bsc-feasibility.md defines roles, costs, equivalence and falsification conditions |
@@ -46,13 +46,3 @@ identifiable as hypotheses.
 | Untrusted peer data is consensus-verified | Not implemented | Envelope validation and authentication do not prove storage truth |
 | All 5,000 clients always succeed | Not claimed | Explicit capacity and negative controls; all failures remain in stress reports |
 | Container runs in production | Not verified | Dockerfile supplied; Docker unavailable in development environment |
-
-## PR #10 mainnet preparation and token isolation
-
-The infrastructure registry is an append-only, single-operator permissioned log,
-not an ERC-20/BEP-20 token, swap contract, staking contract or reward mechanism.
-The separate ecosystem token is `0x259dd071f40d96e61f2bcc663bfac6898d957777`;
-that address is never a deployment target, registry address or witness address.
-Current mainnet status remains **not deployed** until real deployment and genesis
-receipts each satisfy the verification pipeline. A fixed genesis fixture is test
-content, not measured mainnet savings. See [deployment boundaries](bsc-mainnet-log.md).

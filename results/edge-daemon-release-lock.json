@@ -1,17 +1,29 @@
 {
   "base_commit": "b5cb0cd2bb22cede6cfca12e5dbc5c1394468bc6",
+  "historical_source_archives": {
+    "README.md": {
+      "original_sha256": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
+      "path": "evidence/pr8/README.md",
+      "reason": "Exact PR8 README retained; current README links to live deployment status rather than freezing a not-deployed claim."
+    },
+    "docs/claims.md": {
+      "original_sha256": "f933ddde96f6e86752d141b6f67e1465d256fed0cbe8fa11c97da77314535de6",
+      "path": "evidence/pr8/claims.md",
+      "reason": "Exact original bytes retained as the current CLI/status evolves in PR10; no old measurement was relabeled."
+    }
+  },
   "schema": "synafly.edge-daemon-release-lock.v1",
   "scope": "File binding/accounting only, not independent measurement or production certification. Initial no-cooldown evidence preserves failed runs.",
   "sha256": {
     ".dockerignore": "da37b505f600ce1ead07f6c533ee87dedc3255dfce12beff1e268be5b77f716a",
     ".github/workflows/tests.yml": "3bde172ad6b04b791d0ba83468d91c2767669a6069b7a7e29b77c9e9ea36a099",
     "Dockerfile": "6bdf71a9c31cc8777e0fbd314d859496299eebbd5c0022ead0fc4a96e0b0a2de",
-    "README.md": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
     "SECURITY.md": "366ea313a850cdb0fd7f325accc9c74f1987a105b056e8f6915ac91e73cff15b",
     "data/mesh-topology.json": "35408246f15236040b3937f5da69bc6609ee219dc1e818f02c39ca8c0ac8b056",
-    "docs/claims.md": "f933ddde96f6e86752d141b6f67e1465d256fed0cbe8fa11c97da77314535de6",
     "docs/edge-daemon-design.md": "9fae60156dc280b479e4fc29e477a7d6da427f0ba74e94fd3ad2e2403ddaf7a4",
     "docs/edge-daemon-results.md": "5ee9530c04e5426c888f7c25f12100bc71b3588d01bf8f14d30040d613c4b0b2",
+    "evidence/pr8/README.md": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
+    "evidence/pr8/claims.md": "f933ddde96f6e86752d141b6f67e1465d256fed0cbe8fa11c97da77314535de6",
     "results/edge-daemon-stress-no-cooldown.json": "1d42ef8ed58575accfda857977104290390850543d228993ce2dda5c8b61afb0",
     "results/edge-daemon-stress.json": "21ca23ab1d59e7c0284fa65dbc890dd05db767ca6ed5a346dfb20c2645a50a55",
     "results/edge-daemon-verification.json": "7db242e0fa0c2d88629fb91defd55850260358cccd65df14136135dcc2b912f8",
