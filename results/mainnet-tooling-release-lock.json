@@ -11,7 +11,7 @@
   "official_token_ca": "0x259dd071f40d96e61f2bcc663bfac6898d957777",
   "schema": "synafly.mainnet-tooling-lock.v1",
   "sha256": {
-    "README.md": "5858145a87bb3d9c904c97713a1c3941974f2dd007e487af34def512b55be6d8",
+    "README.md": "a64c5a8923811697f0c84149f5e06a85bc1e833ce042bd4e994001cb708df90b",
     "contracts/ContinuityRegistry.sol": "f89ea3ccc5b576ff454c775d57f9c7ca0ccdd8c9b45c3867a935274c97045113",
     "docs/bsc-mainnet-log.md": "72bbf03f9029d9eecc00d4a9dd570eea14bca0dad86167ff42256ea38add8ea8",
     "docs/token-economic-rfc.md": "cb0872cd61832695388e25e776a0886df7d523c55484449dd201774dca57cca0",
