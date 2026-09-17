@@ -1,0 +1,31 @@
+{
+  "base_commit": "149f028a3e1b59494c3e072759608e79a50f24cd",
+  "schema": "synafly.quorum-release-lock.v1",
+  "scope": "Owned local EVM evidence and offline verification. Source hashes are integrity bindings, not independent attestation of real-world savings.",
+  "sha256": {
+    "contracts/ContinuityRegistry.sol": "f89ea3ccc5b576ff454c775d57f9c7ca0ccdd8c9b45c3867a935274c97045113",
+    "data/mesh-topology.json": "35408246f15236040b3937f5da69bc6609ee219dc1e818f02c39ca8c0ac8b056",
+    "docs/quorum-pipeline-design.md": "045b903b43f1f02a347992596645ad5adaa77bca4378dded6c45e4b7b697f697",
+    "docs/quorum-pipeline-results.md": "0169183e9c903526f0e1fd21fdf7284cbf46c2fe3f2f7c4849c5ffbc632f7c21",
+    "results/quorum-pipeline-counterfactual.json": "080de1cd1f45cc90cca278fccc543932e870ebafc51518e95a3b918d0fadfdb8",
+    "results/quorum-pipeline.json": "98e9fc86fac2a12509458b48cbe9a0676feb258c5cbb262ed015e50d7f2eee4b",
+    "scripts/relay_offload_commitments.py": "55b89384ccee0f85b6358378665be3f4ccb23772e73f2934ec9bd6d828309f1c",
+    "scripts/run_mesh_cluster.py": "7af810e4506c8c8faa0f8bb26c99623e83c6e94db2a1cb141608605c72b4037e",
+    "scripts/verify_quorum_pipeline.py": "c4f0e2f8a7edf446598f677755894bf6187ec0a046b94566418d53eeb280ace1",
+    "synafly_lab/anchor.py": "f2d02ed4e7eda44d51225b7a6b77c755d64dd67515ceaf791ea3ec27718a451d",
+    "synafly_lab/edge_daemon.py": "35872427f42d8781c5a35ce42227c4a3d55e9b28ae71219e47667182ed37aeba",
+    "synafly_lab/edge_mesh.py": "f355013d66dcc7dfb26763e1ecf89f4c807eded4cdf213922a093e291d547863",
+    "synafly_lab/keccak.py": "f5162e82a73b230c339c7e8820a109e684657961d6fe83b1a06367fe78483b42",
+    "synafly_lab/offload_receipts.py": "6401c9bfe333b0ea041e99bc0d97c85d4dece149f25e0e6232e5043e1665b05c",
+    "synafly_lab/quorum_crypto.py": "e3f5f32904afd7c6440fb319a97083f149880caec2a54c57171ab40fe69eef52",
+    "synafly_lab/quorum_local_evm.py": "b3aece7cc24133d97e5e2d41e5a0ae031ac8582d058f7e2146ebee32a4a65539",
+    "synafly_lab/quorum_relayer.py": "b61ebfa64b5c38f8691add5d143e7b1f8521bd0c153d82b869cdbc24af2446e0",
+    "synafly_lab/quorum_rpc.py": "50d18ee1eb2a8b7b48cb2e680c84fc5a1863b0df3a83234fbbb8fc6467f73c13",
+    "synafly_lab/rpc.py": "f222b80b0502f0216a78d9119f2ac4dc10db3dce415280324183276f37e488fc",
+    "tests/test_quorum_relayer.py": "456aa5e9599b5ed8b1e5d07fbd999af747552577824bfa1ec364ad39217de6e1"
+  },
+  "tests": {
+    "foundry": 10,
+    "python": 159
+  }
+}
