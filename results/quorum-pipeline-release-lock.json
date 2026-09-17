@@ -1,5 +1,12 @@
 {
   "base_commit": "149f028a3e1b59494c3e072759608e79a50f24cd",
+  "historical_source_archives": {
+    "scripts/relay_offload_commitments.py": {
+      "original_sha256": "55b89384ccee0f85b6358378665be3f4ccb23772e73f2934ec9bd6d828309f1c",
+      "path": "evidence/pr9/relay_offload_commitments.py.txt",
+      "reason": "Exact original bytes retained as the current CLI/status evolves in PR10; no old measurement was relabeled."
+    }
+  },
   "schema": "synafly.quorum-release-lock.v1",
   "scope": "Owned local EVM evidence and offline verification. Source hashes are integrity bindings, not independent attestation of real-world savings.",
   "sha256": {
@@ -7,9 +14,9 @@
     "data/mesh-topology.json": "35408246f15236040b3937f5da69bc6609ee219dc1e818f02c39ca8c0ac8b056",
     "docs/quorum-pipeline-design.md": "045b903b43f1f02a347992596645ad5adaa77bca4378dded6c45e4b7b697f697",
     "docs/quorum-pipeline-results.md": "0169183e9c903526f0e1fd21fdf7284cbf46c2fe3f2f7c4849c5ffbc632f7c21",
+    "evidence/pr9/relay_offload_commitments.py.txt": "55b89384ccee0f85b6358378665be3f4ccb23772e73f2934ec9bd6d828309f1c",
     "results/quorum-pipeline-counterfactual.json": "080de1cd1f45cc90cca278fccc543932e870ebafc51518e95a3b918d0fadfdb8",
     "results/quorum-pipeline.json": "98e9fc86fac2a12509458b48cbe9a0676feb258c5cbb262ed015e50d7f2eee4b",
-    "scripts/relay_offload_commitments.py": "55b89384ccee0f85b6358378665be3f4ccb23772e73f2934ec9bd6d828309f1c",
     "scripts/run_mesh_cluster.py": "7af810e4506c8c8faa0f8bb26c99623e83c6e94db2a1cb141608605c72b4037e",
     "scripts/verify_quorum_pipeline.py": "c4f0e2f8a7edf446598f677755894bf6187ec0a046b94566418d53eeb280ace1",
     "synafly_lab/anchor.py": "f2d02ed4e7eda44d51225b7a6b77c755d64dd67515ceaf791ea3ec27718a451d",
