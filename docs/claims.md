@@ -10,7 +10,7 @@
 | Keepers are geographically/administratively decentralized | Not established | All test processes share one host/operator; deploy independently to test this |
 | Registry verifies a distinct witness quorum | Tested locally | Solidity tests, exact revert trace check and local Anvil commit receipts |
 | Registry proves neuronal correctness on-chain | Not claimed | Contract checks attestations, not execution; dishonest quorum remains a risk |
-| BSC public-chain checkpoint exists | Not deployed | Mainnet tooling is prepared; no confirmed mainnet checkpoint is recorded. See deployments/bsc-mainnet.json. |
+| BSC public-chain checkpoint exists | Deployed permissioned log, no economic claim | Confirmed mainnet deployment/genesis are recorded in deployments/bsc-mainnet.json. Infrastructure log only; NOT the ecosystem token. |
 | On-chain hashes guarantee perpetual recovery | False without retention assumptions | Keepers must preserve bytes; hashes alone cannot restore unavailable data |
 | Full fly brain or consciousness has been uploaded | Not implemented or claimed | Small positive-weight toy model; no fitted physiology, learning or embodied control |
 | BSC node roles can be offloaded efficiently | Hypothesis | docs/bsc-feasibility.md defines roles, costs, equivalence and falsification conditions |
