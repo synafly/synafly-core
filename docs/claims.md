@@ -47,12 +47,11 @@ identifiable as hypotheses.
 | All 5,000 clients always succeed | Not claimed | Explicit capacity and negative controls; all failures remain in stress reports |
 | Container runs in production | Not verified | Dockerfile supplied; Docker unavailable in development environment |
 
-## PR #10 mainnet preparation and token isolation
+## PR #10 mainnet deployment and token isolation
 
-The infrastructure registry is an append-only, single-operator permissioned log,
+The infrastructure registry is an append-only, single-operator permissioned log on BSC (deployer is the token creator wallet `0xce46009fefe328ec70b5f8cf2b02b28397f0e7ba`),
 not an ERC-20/BEP-20 token, swap contract, staking contract or reward mechanism.
 The separate ecosystem token is `0x259dd071f40d96e61f2bcc663bfac6898d957777`;
 that address is never a deployment target, registry address or witness address.
-Current mainnet status remains **not deployed** until real deployment and genesis
-receipts each satisfy the verification pipeline. A fixed genesis fixture is test
-content, not measured mainnet savings. See [deployment boundaries](bsc-mainnet-log.md).
+Confirmed deployed on BSC mainnet at `0x577f89cf815d3ca533414f93b0ee94b848dfc96c` (genesis commit block 122377571), as authoritative in `deployments/bsc-mainnet.json`.
+Single-operator permissioned continuity log on BSC, no economic claim. See [deployment boundaries](bsc-mainnet-log.md).
