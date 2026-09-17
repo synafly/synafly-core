@@ -1,5 +1,5 @@
 {
-  "actual_mainnet_deployed": false,
+  "actual_mainnet_deployed": true,
   "base_commit": "149ddde527640e611bb6844a083cc50217829583",
   "contract_type": "INFRASTRUCTURE_CONTINUITY_LOG",
   "governance": "single-operator permissioned log; not decentralized multi-party consensus",
@@ -11,9 +11,9 @@
   "official_token_ca": "0x259dd071f40d96e61f2bcc663bfac6898d957777",
   "schema": "synafly.mainnet-tooling-lock.v1",
   "sha256": {
-    "README.md": "6582510d2130843decfea6901c310b1049f71d79fafd14a11c34ba177aca2b31",
+    "README.md": "5858145a87bb3d9c904c97713a1c3941974f2dd007e487af34def512b55be6d8",
     "contracts/ContinuityRegistry.sol": "f89ea3ccc5b576ff454c775d57f9c7ca0ccdd8c9b45c3867a935274c97045113",
-    "docs/bsc-mainnet-log.md": "8539cbc1a57c396962f095ddf2d2275807c25863a2ca3d536b57199c0893401b",
+    "docs/bsc-mainnet-log.md": "082f4a5558d9dfbb338b04955100755eb70527aa7916cdba3d804c117d29a97f",
     "docs/token-economic-rfc.md": "cb0872cd61832695388e25e776a0886df7d523c55484449dd201774dca57cca0",
     "evidence/README.md": "cbd814d79b5e17b8823bf906d889894b45e455f802d1ba48c588f32bf7122f2c",
     "evidence/pr8/README.md": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
@@ -22,7 +22,7 @@
     "foundry.toml": "26a025c9009741105cdf0897602d147dc20e8efb907ef73f4330656958bdeed1",
     "requirements-mainnet-signing.txt": "3cacf8e410fa790acdc343e09e68fc5f38c663b1f0b0d2003347c0c2af8f5e12",
     "results/edge-daemon-release-lock.json": "061d97b0e86a61e6414b9a5b42e6571596f03a6675959af778be04bf0af8c5ef",
-    "results/mainnet-signer-verification.json": "f3f3ef1a59e470c13d4cdd7ed8034ffedd09891a1e8bbb83fd1fb1f54071c3c0",
+    "results/mainnet-signer-verification.json": "753cac3f093d2ecfbc3c7281721e4905cfeb442c0654824759f28935e032cc12",
     "results/quorum-pipeline-release-lock.json": "6f4fc1177669f33b67974fdf69ad64b9cb8e12945126210ace37fe2a065036e5",
     "scripts/deploy_bsc_mainnet.py": "bdee08a80eedacf42c11121c5486d4c4025cf68f8cdfa6d112d84284deeec0a8",
     "scripts/make_mainnet_fixture.py": "a3e281669b0f4a2e7e0fdeb543bfbaaa116dee8af816b90954a1c7c4ddec0bfe",

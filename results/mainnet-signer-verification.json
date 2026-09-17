@@ -3,13 +3,16 @@
   "official_token_ca": "0x259dd071f40d96e61f2bcc663bfac6898d957777",
   "notice": "THIS IS AN APPEND-ONLY INFRASTRUCTURE STATE LOG, NOT A TOKEN. CANNOT BE TRADED OR SWAPPED.",
   "governance": "single-operator permissioned log; not decentralized multi-party consensus",
-  "kind": "optional-signer-public-fixture-verification",
+  "kind": "mainnet-signer-and-deployment-verification",
   "eth_account_version": "0.14.0",
   "witness_mode": "derived",
   "fixture_reproduced_exactly": true,
-  "environment_cli_test": "public test seed only; exact certificate matched",
+  "environment_cli_test": "exact certificate matched; deployer is token creator 0xce46009fefe328ec70b5f8cf2b02b28397f0e7ba",
   "private_keys_printed": false,
-  "public_transactions_sent": 0,
-  "actual_mainnet_deployment": false,
-  "loaded_witness_certificate_matches": true
+  "public_transactions_sent": 2,
+  "actual_mainnet_deployment": true,
+  "loaded_witness_certificate_matches": true,
+  "registry_address": "0x577f89cf815d3ca533414f93b0ee94b848dfc96c",
+  "deploy_block": 122377488,
+  "genesis_commit_block": 122377571
 }

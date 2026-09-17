@@ -8,10 +8,9 @@ Never use that address as the registry, a witness, or a transaction destination.
 
 ## Current status and trust model
 
-This PR prepares tooling and offline evidence. Mainnet status is authoritative in
-[`deployments/bsc-mainnet.json`](../deployments/bsc-mainnet.json), which stays
-`not_deployed` until the operator supplies a funded wallet and executes the flow.
-A fixture, predicted address or BscScan URL is not a deployment or verification.
+Mainnet deployment is confirmed as a **single-operator permissioned log** on BSC
+(deployer: token creator wallet `0xce46009fefe328ec70b5f8cf2b02b28397f0e7ba`; registry: `0x577f89cf815d3ca533414f93b0ee94b848dfc96c`; deploy block: 122377488; genesis commit block: 122377571).
+Authoritative records and receipts are in [`deployments/bsc-mainnet.json`](../deployments/bsc-mainnet.json).
 
 The intended governance is a **single-operator permissioned log**, not independent
 multi-party consensus. Three witnesses derived/managed by one operator do not add
@@ -200,8 +199,8 @@ now reference exact archived bytes under `evidence/`, preserving prior meaning.
 Old measurements, runtime/quorum source and Solidity were not rewritten. Current
 chain-56 behavior is covered by new tests; no old result is relabeled as a mainnet run.
 
-**Not done in this PR:** funded mainnet broadcast, real BscScan verification,
-independent witness operators, real offload measurement, economic rewards or staking.
+**Executed:** funded mainnet deployment and genesis commitment broadcast by operator, confirmed on BSC mainnet deploy block 122377488 and genesis commit block 122377571.
+**Remaining boundaries:** single-operator permissioned governance, no independent witness operators, no real-world offload measurement, no economic rewards or staking.
 The [token-economic RFC](token-economic-rfc.md) is non-normative and deploys nothing.
 
 ## Preparation evidence

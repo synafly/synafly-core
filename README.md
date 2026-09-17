@@ -28,8 +28,9 @@ Measured cache/coalescing gains are **not a demonstrated biological advantage**.
 The separate ecosystem token is `0x259dd071f40d96e61f2bcc663bfac6898d957777`;
 never treat its address as the registry or send it deployment/commit calldata.
 
-Mainnet deployment tooling is prepared for a **single-operator permissioned log**.
-No mainnet deployment is claimed by the test fixture. See the [operator runbook](docs/bsc-mainnet-log.md)
+Mainnet deployment is confirmed as a **single-operator permissioned log** on BSC
+(deployer: token creator wallet `0xce46009fefe328ec70b5f8cf2b02b28397f0e7ba`; registry: `0x577f89cf815d3ca533414f93b0ee94b848dfc96c`; deploy block: 122377488; genesis commit block: 122377571).
+No economic claim. See [deployments/bsc-mainnet.json](deployments/bsc-mainnet.json), the [operator runbook](docs/bsc-mainnet-log.md),
 and the explicitly [non-normative token RFC](docs/token-economic-rfc.md).
 
 ## Experimental Synaptic Edge Daemon & Mesh
