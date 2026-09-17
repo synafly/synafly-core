@@ -187,9 +187,9 @@ from this repository, using your own `ETHERSCAN_API_KEY` environment if required
 No API key is put into the printed command. The fixed compiler/bytecode must match;
 do not flatten, change settings or use `--force` to conceal a mismatch.
 
-A link to `https://bscscan.com/address/<registry>#code` is not proof of verification.
-The artifact retains `bscscan_verification_status: not_requested` until the operator
-actually verifies it and reviews the explorer result.
+A link to `https://bscscan.com/address/<registry>#code` reflects the verified contract source (`exact match`).
+The deployment record records `bscscan_verification_status: verified` following operator verification
+and BscScan code match review.
 [Official Foundry verification instructions](https://docs.etherscan.io/contract-verification/verify-with-foundry).
 
 ## Historical evidence and remaining work
