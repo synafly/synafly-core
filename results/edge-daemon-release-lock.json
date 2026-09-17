@@ -1,0 +1,43 @@
+{
+  "base_commit": "b5cb0cd2bb22cede6cfca12e5dbc5c1394468bc6",
+  "schema": "synafly.edge-daemon-release-lock.v1",
+  "scope": "File binding/accounting only, not independent measurement or production certification. Initial no-cooldown evidence preserves failed runs.",
+  "sha256": {
+    ".dockerignore": "da37b505f600ce1ead07f6c533ee87dedc3255dfce12beff1e268be5b77f716a",
+    ".github/workflows/tests.yml": "3bde172ad6b04b791d0ba83468d91c2767669a6069b7a7e29b77c9e9ea36a099",
+    "Dockerfile": "6bdf71a9c31cc8777e0fbd314d859496299eebbd5c0022ead0fc4a96e0b0a2de",
+    "README.md": "34bf959cb5bd421c5af4d31c5be240418d36b4ef6fbec6846cf7feb7a10de5bb",
+    "SECURITY.md": "366ea313a850cdb0fd7f325accc9c74f1987a105b056e8f6915ac91e73cff15b",
+    "data/mesh-topology.json": "35408246f15236040b3937f5da69bc6609ee219dc1e818f02c39ca8c0ac8b056",
+    "docs/claims.md": "f933ddde96f6e86752d141b6f67e1465d256fed0cbe8fa11c97da77314535de6",
+    "docs/edge-daemon-design.md": "9fae60156dc280b479e4fc29e477a7d6da427f0ba74e94fd3ad2e2403ddaf7a4",
+    "docs/edge-daemon-results.md": "5ee9530c04e5426c888f7c25f12100bc71b3588d01bf8f14d30040d613c4b0b2",
+    "results/edge-daemon-stress-no-cooldown.json": "1d42ef8ed58575accfda857977104290390850543d228993ce2dda5c8b61afb0",
+    "results/edge-daemon-stress.json": "21ca23ab1d59e7c0284fa65dbc890dd05db767ca6ed5a346dfb20c2645a50a55",
+    "results/edge-daemon-verification.json": "7db242e0fa0c2d88629fb91defd55850260358cccd65df14136135dcc2b912f8",
+    "scripts/export_daemon_catalog.py": "948d7f68ee63e5e809b4682a2d0b0f23ca2d36a320bbd6d22d8efb24b0a047f8",
+    "scripts/run_edge_daemon.py": "7dbb2aa30c1a01462f9797554459aa26229b36aea1214c771ecee10a75e93397",
+    "scripts/stress_edge_daemon.py": "42facc8245fa720d8207e2507834960fe1f12e39ad6db3df13df06856caf64e7",
+    "scripts/verify_daemon_evidence.py": "eaed6b7a487401693cbc79eb5df517be2e0d4c2b6d245710018a0810ec0d8c99",
+    "scripts/verify_edge_daemon.py": "3bdd5fb22d11c9c909387952e1eb6cd16763476b82031d0144762a3fe92f6940",
+    "synafly_lab/block_warmer.py": "3c10da74701d0535d435410a44303f883505bdeb34acdd7af1f5fb326631027c",
+    "synafly_lab/daemon_ingress.py": "36afd60997056a884552399cc9d743f9caa16a85ba0be77f957326ea47a12392",
+    "synafly_lab/edge_daemon.py": "35872427f42d8781c5a35ce42227c4a3d55e9b28ae71219e47667182ed37aeba",
+    "synafly_lab/edge_mesh.py": "f355013d66dcc7dfb26763e1ecf89f4c807eded4cdf213922a093e291d547863",
+    "synafly_lab/keccak.py": "f5162e82a73b230c339c7e8820a109e684657961d6fe83b1a06367fe78483b42",
+    "synafly_lab/offload_receipts.py": "6401c9bfe333b0ea041e99bc0d97c85d4dece149f25e0e6232e5043e1665b05c",
+    "synafly_lab/recipe_prefetch.py": "57e092a1a7a43d7f88605cf8a94e68aac503c0b1216b7b366f9c3d121dafbb77",
+    "synafly_lab/runtime_edge.py": "3187a8cfeb3d11738d7cf6db8efb45f89c59ff37028eaf5a13b3b1618507e504",
+    "synafly_lab/runtime_recipes.py": "2664e258d1e9db3602ff9aa1b6dc1e3255fef5945a2bb4f1d7f80289c821a1fe",
+    "tests/daemon_fixture.py": "a3f349ff38d4014bcc385f6c38de0b2db2bd1689b633e93e8ff79ba67b395870",
+    "tests/test_edge_daemon.py": "44dab87b3ea48ae34c8918267fd7ade04669d3505817c58efd58b8281517709a"
+  },
+  "tests": {
+    "foundry": 10,
+    "python": 128,
+    "python_versions": [
+      "3.12.13",
+      "3.14.5"
+    ]
+  }
+}
